@@ -1,21 +1,20 @@
 # Setting Up AuthJS with Next.js
 
-## Prerequisites
-- Node.js 18.17 or later
-- Next.js 14 project
-
-## Step-by-Step Guide
 
 ### 1. Installation
-```bash
-pnpm add next-auth@beta
-```
+pnpm add next-auth@beta 
+1. 'pnpm dlx shadcn@latest add form'   for shadcn form which uses zod by default for form schema
+2. "pnpm dlx shadcn@latest add select" for select
+3. "pnpm dlx shadcn@latest add input" for input   
+
+### 1.5 setup F.E in page.tsx of login route
 
 ### 2. Setup Environment Variables
 Create `.env.local`:
 ```env
 AUTH_SECRET=your-secret-key-here
-```
+            by giving command pnpm dlx auth secret
+```   
 
 ### 3. Create Auth Config
 Create `auth.config.ts` in root:
@@ -51,26 +50,28 @@ export const config = {
 ```
 
 ### 5. Add Auth Provider
-Create `auth.ts` in root:
+Create `auth.ts` in src directory:
 ```typescript
 import NextAuth from "next-auth"
-import { authConfig } from "./auth.config"
-import Credentials from "next-auth/providers/credentials"
 
-export const { auth, signIn, signOut } = NextAuth({
-    ...authConfig,
-    providers: [
-        Credentials({
-            async authorize(credentials) {
-                // Add your authentication logic here
-                return null
-            }
-        })
-    ]
-})
+
+
+export const { handlers, auth } = NextAuth({
+
+  // Add your authentication providers and configuration here
+
+  providers: [logic implemented in file],
+
+```
+### 6. create api/auth/[...nextauth]/route.ts file app
+``` 
+import { handlers } from "@/auth"
+
+export const {GET, POST} = handlers
 ```
 
-### 6. Implement in Server Components
+
+### 7. Implement in Server Components
 ```typescript
 import { auth } from "@/auth"
 
@@ -80,7 +81,7 @@ export default async function Page() {
 }
 ```
 
-### 7. Implement in Client Components
+### 8. Implement in Client Components
 ```typescript
 'use client'
 import { signIn, signOut } from "next-auth/react"
