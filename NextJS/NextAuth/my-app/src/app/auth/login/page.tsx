@@ -14,14 +14,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"; // Import form-related components
-
-
-
-// Define the form validation schema using Zod
-export const formSchema = z.object({
-  email: z.string().email(), // Validate email format
-  password: z.string().min(6), // Ensure password is at least 6 characters
-});
+import { formSchema } from "@/lib/schemas";  // import the form validation schema using Zod
 
 
 
@@ -131,4 +124,3 @@ async function signIn(provider: string, credentials: {
     callbackUrl: credentials.callbackUrl,
   });
 }
-

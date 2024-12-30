@@ -1,4 +1,4 @@
-# Setting Up AuthJS with Next.js
+                                                      Setting Up AuthJS with Next.js
 
 
 ### 1. Installation
@@ -72,7 +72,7 @@ export const {GET, POST} = handlers
 ### 7. Playing with Session in client side
 make header a client component.
 import useSession in it and then use useSession() and store it in a variable
-then import sessionProvider in layout to encircle all of the html and wrap the layout in <SessionProvider>
+then import sessionProvider in layout to wrap all of the html layout in <SessionProvider>
 
 ### 8. Playing with session in server component
 dont have to make header a client component
