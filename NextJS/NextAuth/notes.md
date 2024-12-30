@@ -54,15 +54,14 @@ Create `auth.ts` in src directory:
 ```typescript
 import NextAuth from "next-auth"
 
-
-
 export const { handlers, auth } = NextAuth({
 
   // Add your authentication providers and configuration here
 
   providers: [logic implemented in file],
+})
 
-```
+
 ### 6. create api/auth/[...nextauth]/route.ts file app
 ``` 
 import { handlers } from "@/auth"
@@ -70,33 +69,17 @@ import { handlers } from "@/auth"
 export const {GET, POST} = handlers
 ```
 
+### 7. Playing with Session in client side
+make header a client component.
+import useSession in it and then use useSession() and store it in a variable
+then import sessionProvider in layout to encircle all of the html and wrap the layout in <SessionProvider>
 
-### 7. Implement in Server Components
-```typescript
-import { auth } from "@/auth"
+### 8. Playing with session in server component
+dont have to make header a client component
+make header a async function
+import auth from @auth
+then await auth() in session variable
+since user is null it will give error at {session?... so you need to do {session.user to overcome this
 
-export default async function Page() {
-    const session = await auth()
-    return <div>Hello {session?.user?.name}</div>
-}
-```
-
-### 8. Implement in Client Components
-```typescript
-'use client'
-import { signIn, signOut } from "next-auth/react"
-
-export default function LoginButton() {
-    return (
-        <button onClick={() => signIn()}>Sign In</button>
-    )
-}
-```
-
-## Notes
-- Always keep secrets in `.env.local`
-- Configure providers based on your needs (Google, GitHub, etc.)
-- Add proper error handling
-- Implement proper authentication logic in authorize callback
-
-[Official AuthJS Documentation](https://authjs.dev/getting-started/introduction)
+### 9. Validating credentials
+goto auth.ts add logic in validate credentials for server side and return user instead of hard coded user

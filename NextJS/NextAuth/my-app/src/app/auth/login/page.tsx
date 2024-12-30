@@ -18,10 +18,12 @@ import {
 
 
 // Define the form validation schema using Zod
-const formSchema = z.object({
+export const formSchema = z.object({
   email: z.string().email(), // Validate email format
   password: z.string().min(6), // Ensure password is at least 6 characters
 });
+
+
 
 export default function Home() {
 // Initialize form with React Hook Form and Zod validation
@@ -36,14 +38,19 @@ const form = useForm<z.infer<typeof formSchema>>({
 // Handle form submission
 const onSubmit = async (data: z.infer<typeof formSchema>) => {
   try {
-    // Send login data to the server
-    await fetch("/api/login", {
-      method: "POST", // Use POST method for login
-      body: JSON.stringify(data), // Convert form data to JSON
-      cache: "no-store", // Disable caching for this request
+    // Replace the fetch with signIn
+    const result = await signIn("credentials", {
+      email: data.email,
+      password: data.password,
+      redirect: true,
+      callbackUrl: "/" // Redirect to home page after login
     });
+    
+    if (result?.error) {
+      console.log(result.error);
+    }
   } catch (err) {
-    console.log("🚀 ~ onSubmit ~ err:", err); // Log any errors during submission
+    console.log("🚀 ~ onSubmit ~ err:", err);
   }
 };
 
@@ -108,3 +115,20 @@ const onSubmit = async (data: z.infer<typeof formSchema>) => {
     </div>
   );
 }
+// Import the signIn function from next-auth
+import { signIn as nextAuthSignIn } from "next-auth/react";
+
+// Implement the signIn function using next-auth
+async function signIn(provider: string, credentials: {
+  email: string;
+  password: string;
+  redirect: boolean;
+  callbackUrl: string;
+}) {
+  return nextAuthSignIn(provider, {
+    ...credentials,
+    redirect: credentials.redirect,
+    callbackUrl: credentials.callbackUrl,
+  });
+}
+
