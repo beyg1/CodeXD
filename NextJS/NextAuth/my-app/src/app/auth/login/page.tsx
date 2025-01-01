@@ -14,7 +14,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"; // Import form-related components
-import { formSchema } from "@/lib/schemas";  // import the form validation schema using Zod
+import { formSchema } from "@/lib/zod";  // import the form validation schema using Zod
 
 
 

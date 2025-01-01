@@ -1,45 +1,57 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import { formSchema } from "@/lib/schemas";
-// import { NextAuthConfig } from "next-auth";
+import Github from "next-auth/providers/github";
+import { formSchema } from "@/lib/zod";
 
-export const { handlers, auth, signIn, signOut, } = NextAuth({
-  providers: [
-    Credentials({
-      credentials: {
-        email: { label: "Email", type: "email", placeholder: "Email" },
-        password: { label: "Password", type: "password", placeholder: "Password" },
-      },
-      async authorize(credentials) {
-        if (!credentials?.email || !credentials?.password) {
-          return null;
-        }
+export const { handlers, signIn, signOut, auth } = NextAuth({
+    providers: [
+        Github,
+        Credentials({
+            credentials: {
+                email: { label: "Email", type: "email", placeholder: "Email" },
+                password: { label: "Password", type: "password", placeholder: "Password" },
+            },
+            async authorize(credentials) {
+                let user = null;
 
-        // Validate credentials on server side VIP
-        const parsedCredentials = formSchema.safeParse(credentials);
-        if (!parsedCredentials.success) {
-          console.error("Credentials not valid", parsedCredentials.error.errors);
-          return null;
-        }
+                // validate credentials
+                const parsedCredentials = formSchema.safeParse(credentials);
+                if (!parsedCredentials.success) {
+                    console.error("Invalid credentials:", parsedCredentials.error.errors);
+                    return null;
+                }
+                // get user
 
-        // For testing - replace with actual DB lookup
-        const user = {
-          id: "1",
-          name: "John Doe",
-          email: String(credentials.email),
-          password: String(credentials.password),
-        };
+                user = {
+                    id: '1',
+                    name: 'John Doe',
+                    email: '1@1.com',
+                    role: "admin"
+                }
 
-        // Here you would normally verify password against hashed DB password
-        if (credentials.email === "1@1.com" && credentials.password === "123456") {
-          return user;
-        }
+                if (!user) {
+                    console.log("Invalid credentials");
+                    return null;
+                }
 
-        return null;
-      },
-    }),
-  ],
-  pages: {
-    signIn: "/auth/login",
-  },
-});
+                return user;
+            }
+        })
+    ],
+    callbacks: {
+        authorized({ request: { nextUrl }, auth }) {
+            const isLoggedIn = !!auth?.user;
+            const { pathname } = nextUrl;
+            if (pathname.startsWith('/auth') && isLoggedIn) {
+                return Response.redirect(new URL('/', nextUrl));
+            }
+            if (!isLoggedIn && !pathname.startsWith('/dashboard')) {
+                return Response.redirect(new URL('/auth/signin', nextUrl));
+            }
+            return isLoggedIn;
+        },    
+    },
+    pages: {
+        signIn: "/auth/signin"
+    }
+})
