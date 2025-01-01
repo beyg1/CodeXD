@@ -1,8 +1,9 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { formSchema } from "@/lib/schemas";
+// import { NextAuthConfig } from "next-auth";
 
-export const { handlers, auth, signIn, signOut } = NextAuth({
+export const { handlers, auth, signIn, signOut, } = NextAuth({
   providers: [
     Credentials({
       credentials: {
@@ -14,7 +15,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           return null;
         }
 
-        // Validate credentials
+        // Validate credentials on server side VIP
         const parsedCredentials = formSchema.safeParse(credentials);
         if (!parsedCredentials.success) {
           console.error("Credentials not valid", parsedCredentials.error.errors);
@@ -34,7 +35,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           return user;
         }
 
-        return null;  
+        return null;
       },
     }),
   ],

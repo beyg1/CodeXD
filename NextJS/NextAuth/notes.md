@@ -37,6 +37,7 @@ export const authConfig = {
 } satisfies NextAuthConfig
 ```
 
+
 ### 4. Setup Middleware
 Create `middleware.ts` in root:
 ```typescript
@@ -75,6 +76,7 @@ import useSession in it and then use useSession() and store it in a variable
 then import sessionProvider in layout to wrap all of the html layout in <SessionProvider>
 
 ### 8. Playing with session in server component
+remove sessionProvider from layout as it's a client-side session provider
 dont have to make header a client component
 make header a async function
 import auth from @auth
@@ -83,3 +85,12 @@ since user is null it will give error at {session?... so you need to do {session
 
 ### 9. Validating credentials
 goto auth.ts add logic in validate credentials for server side and return user instead of hard coded user
+
+### 10. create actions folder in app and add file authActions.ts to it, in it we will create function for signin and signout 
+but i have done it in main page.tsx file of login. at the end of login form related part. now use it in onSubmit function
+created actions folder for signOut functionality as it needed to be exported and imported by header component. (use client)
+
+### 11. Protect routes by adding callback section in auth.ts
+write logic  to protect routes based on session details. for example if user is logged in, he shouldnt have access to signIN page
+IT'S NOT WORKING because there's a auth.config.ts file which is conflicting with auth.ts for middlewear and specially for 
+callbacks

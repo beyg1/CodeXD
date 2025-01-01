@@ -1,8 +1,11 @@
 //use client;
 import React from 'react';
+import { signOutUser } from '@/app/actions/authActions';
 import Link from 'next/link';
 //import { useSession } from 'next-auth/react'; // if it's clientside, use useSession() to get the session
 import { auth } from '../../auth';
+import { Button } from './ui/button';
+
 
 export default async function Header(){
   //const { data: session } = useSession(); //use useSession() and store it in a variable if it's clientside
@@ -25,16 +28,15 @@ export default async function Header(){
           <>
           <Link
             href="/dashboard"
-            className="rounded-full border transition-colors duration-200 bg-gray-100 hover:bg-blue-300 px-4 py-4"
+            className="rounded-full text-black border transition-colors duration-200 bg-gray-100 hover:bg-blue-300 px-4 py-4"
           >
             Dashboard(Protected Route)
           </Link>
-          <Link
-            href="/"
-            className="rounded-full border transition-colors duration-200 bg-gray-100 hover:bg-red-300 px-4 py-4"
-          >
-            SignOut
-          </Link>
+          <form action={signOutUser} >
+            <Button className="rounded-full text-black border transition-colors duration-200 bg-gray-100 hover:bg-teal-300 px-4 py-6"  type="submit">
+              SignOut
+            </Button>
+          </form>
           </>) : (
           <Link
             href="/auth/login"
