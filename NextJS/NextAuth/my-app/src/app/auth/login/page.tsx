@@ -15,6 +15,8 @@ import {
   FormMessage,
 } from "@/components/ui/form"; // Import form-related components
 import { formSchema } from "@/lib/zod";  // import the form validation schema using Zod
+import { handleGithubSignin } from '@/app/actions/authActions';
+
 
 
 
@@ -103,6 +105,18 @@ const onSubmit = async (data: z.infer<typeof formSchema>) => {
             {/* Submit button */}
             <Button type="submit">Login</Button>
           </form>
+          <span className="text-md font-bold text-black text-center block my-2">
+                        OR
+                    </span>
+                    <form className="w-full" action={handleGithubSignin}>
+                        <Button
+                            variant="outline"
+                            className="w-full hover:bg-gray-950 hover:text-white"
+                            type="submit"
+                        >                            
+                            Sign in with GitHub
+                        </Button>
+                     </form>   
         </Form>
       </div>
     </div>

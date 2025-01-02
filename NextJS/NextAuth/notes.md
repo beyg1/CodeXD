@@ -63,4 +63,30 @@ created actions folder for signOut functionality as it needed to be exported and
 ### 11. Protect routes by adding callback section in auth.ts
 write logic  to protect routes based on session details. for example if user is logged in, he shouldnt have access to signIN page
 IT'S NOT WORKING because there's a auth.config.ts file which is conflicting with auth.ts for middlewear and specially for 
-callbacks
+callbacks so delete it and bring it all to auth.ts. It still didnt worked as auth.ts was in root directory but i was using src in
+nextjs so had to move middleware into src directory and everything worked.
+whatever routes you wana protect by writing logic in auth.ts, you have to mention in the matcher in the middleware.ts
+
+### 12. SignIn with socials using oAuth
+we will use github in this app. goto github acct goto settings => developer settings => oAuthapps =>
+for homepage url : http://localhost:3000
+for callback url : http://localhost:3000/api/auth/callback/github
+get client id and generate secret over there.
+then goto .env.local and add them there
+AUTH_GITHUB_ID="example"
+AUTH_GITHUB_SECRET="example"
+
+### Setup a button for github login in login page.tsx file
+<span className="text-md font-bold text-black text-center block my-2">
+                        OR
+                    </span>
+                    <form className="w-full" action={handleGithubSignin}>
+                        <Button
+                            variant="outline"
+                            className="w-full hover:bg-gray-950 hover:text-white"
+                            type="submit"
+                        >                            
+                            Sign in with GitHub
+                        </Button>
+                     </form> 
+with that make handleGihubSignin function in authActions.ts to handle the sign in                     

@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import Github from "next-auth/providers/github";
-import { formSchema } from "@/lib/zod";
+import { formSchema } from "@/lib/zod"; 
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
     providers: [
@@ -42,14 +42,30 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         authorized({ request: { nextUrl }, auth }) {
             const isLoggedIn = !!auth?.user;
             const { pathname } = nextUrl;
-            if (pathname.startsWith('/auth') && isLoggedIn) {
+            // const role = auth?.user.role || 'user';
+            if (pathname.startsWith('/auth/login') && isLoggedIn) {
                 return Response.redirect(new URL('/', nextUrl));
             }
-            if (!isLoggedIn && !pathname.startsWith('/dashboard')) {
-                return Response.redirect(new URL('/auth/signin', nextUrl));
+            if (!isLoggedIn && pathname.startsWith('/dashboard')) {
+                return Response.redirect(new URL('/auth/login', nextUrl));
             }
-            return isLoggedIn;
-        },    
+            return true;
+        },
+        // jwt({ token, user, trigger, session }) {
+        //     if (user) {
+        //         token.id = user.id as string;               this is to console log the user id/role by accessing jwt token & session
+        //         token.role = user.role as string;
+        //     }
+        //     if (trigger === "update" && session) {
+        //         token = { ...token, ...session };
+        //     }
+        //     return token;
+        // },
+        // session({ session, token }) {
+        //     session.user.id = token.id;
+        //     session.user.role = token.role;
+        //     return session;
+        // }
     },
     pages: {
         signIn: "/auth/signin"
