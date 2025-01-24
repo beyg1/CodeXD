@@ -1,0 +1,1 @@
+console.log("Discipline beats motivation every time.");

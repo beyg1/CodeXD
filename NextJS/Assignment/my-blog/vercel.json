@@ -1,0 +1,10 @@
+{
+    "buildCommand": "pnpm run build",
+    
+    "rewrites": [
+      {
+        "source": "/api/(.*)",
+        "destination": "/api/$1"
+      }
+    ]
+  }

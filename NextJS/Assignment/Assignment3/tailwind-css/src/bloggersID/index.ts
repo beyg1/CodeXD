@@ -1,0 +1,27 @@
+export const bloggersID = [
+    {
+        id:1,
+        name:"John",
+        age:22
+    },
+    {
+        id:2,
+        name:"Rayan",
+        age:28
+    },
+    {
+        id:3,
+        name:"Jack",
+        age:33
+    },
+    {
+        id:4,
+        name:"Tabitha",
+        age:21
+    },
+    {
+        id:5,
+        name:"Ben",
+        age:15
+    }
+]
