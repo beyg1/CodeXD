@@ -25,7 +25,7 @@ export default function HowItWorks() {
   ]
 
   return (
-    <section className="py-24 bg-background">
+    <section className="min-h-screen w-full flex items-center justify-center bg-background">
       <div className="container px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">How It Works</h2>

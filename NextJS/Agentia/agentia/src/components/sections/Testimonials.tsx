@@ -6,21 +6,21 @@ const testimonials = [
   {
     name: "John Smith",
     role: "CTO, TechCorp",
-    content: "Agentia's AI solutions have transformed our business operations. The results exceeded our expectations.",
+    content: "Agentia's vertical AI solutions have transformed our business operations. The results exceeded our expectations.",
     rating: 5,
     avatar: "/test1.png"
   },
   {
     name: "Lisa Chen",
     role: "CEO, StartupX",
-    content: "Working with Agentia was a game-changer. Their AI expertise helped us scale efficiently.",
+    content: "Working with Agentia was a game-changer. Their AI expertise helped us scale efficiently. Sometimes I wonder how we managed without them.",
     rating: 5,
     avatar: "/test3.png"
   },
   {
     name: "Mike Johnson",
     role: "Director, InnovateNow",
-    content: "The team at Agentia delivers exceptional results. Their AI solutions are cutting-edge.",
+    content: "The team at Agentia delivers exceptional results. Their AI solutions are cutting-edge, cloud based and chat user interface is amazing.",
     rating: 5,
     avatar: "/test2.png"
   }
@@ -28,7 +28,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-background">
+    <section className="min-h-screen w-full flex items-center justify-center bg-background">
       <div className="container px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Testimonials</h2>

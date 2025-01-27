@@ -1,6 +1,5 @@
 import { Monitor, Shield, Zap, LineChart, CloudLightning, Code2 } from "lucide-react"
 
-
 export default function Features() {
   const features = [
     {
@@ -36,26 +35,24 @@ export default function Features() {
   ]
 
   return (
-      <section className="features">
-        <section className="py-24 bg-muted">
-          <div className="container px-4 md:px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Features</h2>
-              <p className="mt-4 text-gray-500 md:text-xl">
-                Discover the powerful features that make our AI solutions stand out
-              </p>
+    <section className="min-h-screen w-full flex items-center justify-center bg-muted">
+      <div className="container px-4 md:px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Features</h2>
+          <p className="mt-4 text-gray-500 md:text-xl">
+            Discover the powerful features that make our AI solutions stand out
+          </p>
+        </div>
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {features.map((feature) => (
+            <div key={feature.title} className="p-6 bg-background rounded-lg shadow-lg">
+              <div className="mb-4">{feature.icon}</div>
+              <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+              <p className="text-gray-500">{feature.description}</p>
             </div>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {features.map((feature) => (
-                <div key={feature.title} className="p-6 bg-background rounded-lg shadow-lg">
-                  <div className="mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                  <p className="text-gray-500">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </section>    
+          ))}
+        </div>
+      </div>
+    </section>    
   )
 }
