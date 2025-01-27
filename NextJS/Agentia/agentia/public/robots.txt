@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://agentia-prototype.vercel.app/sitemap.xml
