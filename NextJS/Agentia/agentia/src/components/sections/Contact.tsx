@@ -11,27 +11,27 @@ export default function Contact() {
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="space-y-6 md:space-y-8">
             <div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Get in Touch</h2>
-              <p className="mt-4 text-gray-500 md:text-xl">
+              <h2 className="text-3xl text-[#d9376e] font-bold tracking-tighter sm:text-4xl md:text-5xl">Get in Touch</h2>
+              <p className="mt-4 text-[#2a2a2a] md:text-xl">
                 Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
               </p>
             </div>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-primary shrink-0" />
-                <span className="text-sm md:text-base">contact@agentiaworld.com</span>
+                <Mail className="w-5 h-5 shrink-0" />
+                <span className="text-sm text-[#2a2a2a] md:text-base">contact@agentiaworld.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
-                <span className="text-sm md:text-base">+1 (555) 000-0000</span>
+                <span className="text-sm text-[#2a2a2a] md:text-base">+1 (555) 000-0000</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-primary shrink-0" />
-                <span className="text-sm md:text-base">123 AI Street, Tech City, TC 12345</span>
+                <span className="text-sm text-[#2a2a2a] md:text-base">123 AI Street, Tech City, TC 12345</span>
               </div>
             </div>
           </div>
-          <div className="space-y-4">
+          <div className="p-4 bg-[#eff0f3]">
             <div className="space-y-2">
               <Label htmlFor="name">Name</Label>
               <Input id="name" placeholder="Your name" />
@@ -48,7 +48,7 @@ export default function Contact() {
                 className="min-h-[120px] md:min-h-[150px]"
               />
             </div>
-            <Button className="w-full md:w-auto" size="lg">Send Message</Button>
+            <Button className="w-full  md:w-auto" size="lg">Send Message</Button>
           </div>
         </div>
       </div>

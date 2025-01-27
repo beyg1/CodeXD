@@ -31,8 +31,8 @@ export default function Testimonials() {
     <section className="relative overflow-hidden bg-gradient-to-b from-primary/10 to-background py-16 md:py-24 bg-[#b8c1ec]">
       <div className="container px-4 md:px-6">
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Testimonials</h2>
-          <p className="mt-4 text-gray-500 md:text-xl">
+          <h2 className="text-3xl font-bold tracking-tighter text-[#d9376e] sm:text-4xl md:text-5xl">Testimonials</h2>
+          <p className="mt-4 c md:text-xl">
             See what our clients say about us
           </p>
         </div>
@@ -40,20 +40,20 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div key={index}>
               <Card>
-                <CardContent className="p-4 md:p-6">
+                <CardContent className="p-4 md:p-6 bg-[#eff0f3]">
                   <div className="flex mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <p className="text-gray-500 mb-4 md:mb-6">{testimonial.content}</p>
-                  <div className="flex items-center gap-3 md:gap-4">
+                  <p className="text-[#2a2a2a] mb-4 md:mb-6">{testimonial.content}</p>
+                  <div className="flex items-center text-[#d9376e] gap-3 md:gap-4">
                     <Avatar>
                       <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
                     </Avatar>
                     <div>
                       <h4 className="font-bold text-sm md:text-base">{testimonial.name}</h4>
-                      <p className="text-sm text-gray-500">{testimonial.role}</p>
+                      <p className="text-sm text-[#2a2a2a]">{testimonial.role}</p>
                     </div>
                   </div>
                 </CardContent>

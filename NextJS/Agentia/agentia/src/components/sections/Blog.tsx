@@ -32,7 +32,7 @@ export default function Blog() {
         <div className="text-center mb-8 md:mb-16">
           <h2 className="text-3xl font-bold text-[#d9376e] tracking-tighter sm:text-4xl md:text-5xl">Latest Insights</h2>
           <p className="mt-4 text-[#232946] md:text-xl">
-            Stay updated with our latest articles and insights
+            Stay updated with our latest articles and blogs on artificial intelligence and it&apos;s impact on businesses around the world.
           </p>
         </div>
         <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -42,12 +42,12 @@ export default function Blog() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-background rounded-lg shadow-lg overflow-hidden"
+              className="bg-background rounded-lg shadow-lg bg-[#eff0f3] overflow-hidden"
             >
               <div className="p-4 md:p-6">
-                <div className="text-sm text-primary mb-2">{post.category}</div>
-                <h3 className="text-lg md:text-xl font-bold mb-2">{post.title}</h3>
-                <p className="text-gray-500 mb-4 text-sm md:text-base">{post.excerpt}</p>
+                <div className="text-sm text-[#232946] mb-2">{post.category}</div>
+                <h3 className="text-lg md:text-xl text-[#d9376e] font-bold mb-2">{post.title}</h3>
+                <p className="text-[#232946] mb-4 text-sm md:text-base">{post.excerpt}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs md:text-sm text-gray-500">{post.date}</span>
                   <Button variant="link" asChild className="text-sm md:text-base">

@@ -42,8 +42,8 @@ export default function Team() {
     <section className="relative overflow-hidden bg-gradient-to-b from-primary/10 to-background py-16 md:py-24 bg-[#b8c1ec]">
       <div className="container px-4 md:px-6">
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Team</h2>
-          <p className="mt-4 text-gray-500 md:text-xl">
+          <h2 className="text-3xl font-bold tracking-tighter text-[#d9376e] sm:text-4xl md:text-5xl">Our Team</h2>
+          <p className="mt-4 text-[#232946] md:text-xl">
             Meet the experts behind our AI innovations
           </p>
         </div>
@@ -51,7 +51,7 @@ export default function Team() {
           {team.map((member, index) => (
             <div
               key={index}
-              className="text-center p-4 md:p-6 bg-background rounded-lg shadow-lg"
+              className="text-center p-4 bg-[#eff0f3] md:p-6 bg-background rounded-lg shadow-lg"
             >
               <div className="relative w-24 h-24 md:w-32 md:h-32 mx-auto mb-4 overflow-hidden rounded-full">
                 <Image
@@ -62,14 +62,14 @@ export default function Team() {
                   sizes="(max-width: 768px) 96px, 128px"
                 />
               </div>
-              <h3 className="text-lg md:text-xl font-bold">{member.name}</h3>
-              <p className="text-gray-500 mb-2">{member.role}</p>
-              <p className="text-sm text-gray-500 mb-4">{member.bio}</p>
+              <h3 className="text-lg md:text-xl text-[#d9376e] font-bold">{member.name}</h3>
+              <p className="text-[#2a2a2a] mb-2">{member.role}</p>
+              <p className="text-sm text-[#2a2a2a] mb-4">{member.bio}</p>
               <div className="flex justify-center space-x-4">
                 <Link href={member.linkedin} className="text-gray-500 hover:text-blue-800">
                   <Linkedin className="w-5 h-5" />
                 </Link>
-                <Link href={member.twitter} className="text-gray-500 hover:text-primary">
+                <Link href={member.twitter} className="text-gray-500 hover:text-black">
                   <Twitter className="w-5 h-5" />
                 </Link>
               </div>
