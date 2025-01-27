@@ -25,23 +25,23 @@ export default function HowItWorks() {
   ]
 
   return (
-    <section className="w-full flex items-center justify-center bg-gradient-to-b from-primary/10 to-background h-screen bg-[#b8c1ec]">
+    <section className="relative overflow-hidden bg-gradient-to-b from-primary/10 to-background py-16 md:py-24 bg-[#b8c1ec]">
       <div className="container px-4 md:px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-16">
           <h2 className="text-3xl font-bold tracking-tighter text-[#d9376e] sm:text-4xl md:text-5xl">How It Works</h2>
           <p className="mt-4 text-[#232946] md:text-xl">
             Our proven process for delivering successful AI solutions
           </p>
         </div>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
             <div
               key={index}
-              className="relative p-6 bg-muted bg-[#eff0f3] rounded-lg shadow-lg"
+              className="relative p-4 md:p-6 bg-muted bg-[#eff0f3] rounded-lg shadow-lg"
             >
               {index < steps.length - 1 && (
                 <div className="hidden lg:block absolute top-1/2 right-0 w-full h-2 transform translate-x-1/2">
-                   <div className="h-0.5 w-full bg-black"></div> {/*Line connection between steps */}
+                   <div className="h-0.5 w-full bg-black"></div>
                 </div>
               )}
               <div className="mb-4">{step.icon}</div>

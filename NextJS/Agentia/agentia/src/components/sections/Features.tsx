@@ -35,17 +35,17 @@ export default function Features() {
   ]
 
   return (
-    <section className="min-h-screen  bg-gradient-to-b from-primary/10 to-background bg-[#b8c1ec] w-full flex items-center justify-center bg-muted">
+    <section className="relative overflow-hidden bg-gradient-to-b from-primary/10 to-background py-16 md:py-24 bg-[#b8c1ec]">
       <div className="container px-4 md:px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-16">
           <h2 className="text-3xl font-bold text-[#d9376e] tracking-tighter sm:text-4xl md:text-5xl">Our Features</h2>
           <p className="mt-4 text-[#232946] md:text-xl">
             Discover the powerful features that make our AI solutions stand out
           </p>
         </div>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => (
-            <div key={feature.title} className="p-6 bg-background bg-[#eff0f3] rounded-lg shadow-lg">
+            <div key={feature.title} className="p-4 md:p-6 bg-background bg-[#eff0f3] rounded-lg shadow-lg">
               <div className="mb-4">{feature.icon}</div>
               <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
               <p className="text-[#232946]">{feature.description}</p>

@@ -4,9 +4,9 @@ import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-background border-t bg-gradient-to-b from-primary/10 to-background bg-[#b8c1ec]">
-      <div className="container px-4 md:px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="relative overflow-hidden bg-gradient-to-b from-primary/10 to-background py-16 md:py-24 bg-[#b8c1ec]">
+      <div className="container px-4 md:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <h3 className="text-lg font-bold">Agentia World</h3>
             <p className="text-sm text-gray-500">
@@ -28,7 +28,7 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h3 className="text-lg font-bold mb-4">Company</h3>
+            <h3 className="text-lg font-bold mb-3 md:mb-4">Company</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="#" className="text-gray-500 hover:text-primary">About</Link>
@@ -45,7 +45,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-bold mb-4">Resources</h3>
+            <h3 className="text-lg font-bold mb-3 md:mb-4">Resources</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="#" className="text-gray-500 hover:text-primary">Blog</Link>
@@ -62,21 +62,21 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-bold mb-4">Newsletter</h3>
+            <h3 className="text-lg font-bold mb-3 md:mb-4">Newsletter</h3>
             <p className="text-sm text-gray-500 mb-4">
               Subscribe to our newsletter for updates and insights.
             </p>
-            <div className="flex space-x-2">
+            <div className="flex flex-col sm:flex-row gap-2">
               <input
                 type="email"
                 placeholder="Enter your email"
                 className="flex-1 px-3 py-2 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
               />
-              <Button size="sm">Subscribe</Button>
+              <Button size="sm" className="w-full sm:w-auto">Subscribe</Button>
             </div>
           </div>
         </div>
-        <div className="mt-16 pt-8 border-t text-center text-sm text-gray-500">
+        <div className="mt-12 md:mt-16 pt-6 md:pt-8 border-t text-center text-sm text-gray-500">
           <p>© 2024 Agentia World. All rights reserved.</p>
         </div>
       </div>

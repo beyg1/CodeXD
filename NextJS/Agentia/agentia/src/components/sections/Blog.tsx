@@ -27,15 +27,15 @@ export default function Blog() {
   ]
 
   return (
-    <section className="py-24 bg-muted bg-gradient-to-b from-primary/10 to-background bg-[#b8c1ec]">
+    <section className="relative overflow-hidden bg-gradient-to-b from-primary/10 to-background py-16 md:py-24 bg-[#b8c1ec]">
       <div className="container px-4 md:px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Latest Insights</h2>
-          <p className="mt-4 text-gray-500 md:text-xl">
+        <div className="text-center mb-8 md:mb-16">
+          <h2 className="text-3xl font-bold text-[#d9376e] tracking-tighter sm:text-4xl md:text-5xl">Latest Insights</h2>
+          <p className="mt-4 text-[#232946] md:text-xl">
             Stay updated with our latest articles and insights
           </p>
         </div>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post, index) => (
             <motion.div
               key={index}
@@ -44,13 +44,13 @@ export default function Blog() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-background rounded-lg shadow-lg overflow-hidden"
             >
-              <div className="p-6">
+              <div className="p-4 md:p-6">
                 <div className="text-sm text-primary mb-2">{post.category}</div>
-                <h3 className="text-xl font-bold mb-2">{post.title}</h3>
-                <p className="text-gray-500 mb-4">{post.excerpt}</p>
+                <h3 className="text-lg md:text-xl font-bold mb-2">{post.title}</h3>
+                <p className="text-gray-500 mb-4 text-sm md:text-base">{post.excerpt}</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">{post.date}</span>
-                  <Button variant="link" asChild>
+                  <span className="text-xs md:text-sm text-gray-500">{post.date}</span>
+                  <Button variant="link" asChild className="text-sm md:text-base">
                     <Link href="#">Read More</Link>
                   </Button>
                 </div>
