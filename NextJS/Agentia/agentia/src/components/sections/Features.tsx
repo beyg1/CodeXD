@@ -1,7 +1,8 @@
-"use client"
+'use client'
 
 import { motion } from "framer-motion"
 import { Monitor, Shield, Zap, LineChart, CloudLightning, Code2 } from "lucide-react"
+
 
 export default function Features() {
   const features = [
@@ -38,30 +39,32 @@ export default function Features() {
   ]
 
   return (
-    <section className="py-24 bg-muted">
-      <div className="container px-4 md:px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Features</h2>
-          <p className="mt-4 text-gray-500 md:text-xl">
-            Discover the powerful features that make our AI solutions stand out
-          </p>
-        </div>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-6 bg-background rounded-lg shadow-lg"
-            >
-              <div className="mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-              <p className="text-gray-500">{feature.description}</p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
+      <section className="features">
+        <section className="py-24 bg-muted">
+          <div className="container px-4 md:px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Features</h2>
+              <p className="mt-4 text-gray-500 md:text-xl">
+                Discover the powerful features that make our AI solutions stand out
+              </p>
+            </div>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="p-6 bg-background rounded-lg shadow-lg"
+                >
+                  <div className="mb-4">{feature.icon}</div>
+                  <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+                  <p className="text-gray-500">{feature.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </section>    
   )
 }
