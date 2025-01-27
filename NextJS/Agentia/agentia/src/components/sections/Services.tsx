@@ -5,9 +5,9 @@ export default function Services() {
   const services = [
     {
       icon: <Brain className="w-12 h-12 text-[#d9376e]" />,
-      title: "AI Consulting",
-      description: "Strategic guidance on implementing AI solutions for your business needs.",
-      price: "$1,999",
+      title: "Agentic Consulting",
+      description: "Pre-defined Strategic guidance on implementing Agentic solutions for your business needs.",
+      price: "$999",
       features: [
         "AI Readiness Assessment",
         "Technology Stack Review",
@@ -17,9 +17,9 @@ export default function Services() {
     },
     {
       icon: <Bot className="w-12 h-12 text-[#d9376e]" />,
-      title: "Machine Learning",
-      description: "Custom ML models designed to solve your specific business challenges.",
-      price: "$2,999",
+      title: "Deep Agentic",
+      description: "Custom Agentic Solutions tailered specifically to solve your business challenges.",
+      price: "$1499",
       features: [
         "Custom Model Development",
         "Model Training & Testing",
@@ -29,14 +29,14 @@ export default function Services() {
     },
     {
       icon: <Database className="w-12 h-12 text-[#d9376e]" />,
-      title: "Data Analytics",
-      description: "Transform your raw data into actionable business insights.",
-      price: "$1,499",
+      title: "Agentic Enterprise",
+      description: "Transform your business empire with a swarm of thousands of Agentia agents.",
+      price: "$2,499",
       features: [
         "Data Processing",
         "Predictive Analytics",
         "Visual Dashboards",
-        "Regular Reports"
+        "Specialized Reports"
       ]
     }
   ]

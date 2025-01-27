@@ -38,9 +38,9 @@ export default function Features() {
     <section className="relative overflow-hidden bg-gradient-to-b from-primary/10 to-background py-16 md:py-24 bg-[#b8c1ec]">
       <div className="container px-4 md:px-6">
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-3xl font-bold text-[#d9376e] tracking-tighter sm:text-4xl md:text-5xl">Our Features</h2>
+          <h2 className="text-3xl font-bold text-[#d9376e] tracking-tighter sm:text-4xl md:text-5xl">Agentic Features</h2>
           <p className="mt-4 text-[#232946] md:text-xl">
-            Discover the powerful features that make our AI solutions stand out
+            Discover the cloud based solutions that make our AI services stand out
           </p>
         </div>
         <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">

@@ -16,12 +16,13 @@ export default function Hero() {
           className="text-center"
         >
           <h1 className="text-4xl font-extrabold tracking-tight text-primary sm:text-5xl md:text-6xl">
-            <span className="block py-4 text-[#d9376e]">Agentia</span>
-            <span className="block text-[#232946] text-muted-foreground">Vertical AI Agents Marketplace</span>
+            <span className="block py-2 text-6xl text-[#d9376e]">Agentia World</span>
+            <span className="block text-[#232946] py-5 font-semibold text-4xl">A Vertical AI Agents Hub</span>
           </h1>
-          <p className="mx-auto mt-3 max-w-md text-base text-muted-foreground sm:text-lg md:mt-5 md:max-w-3xl md:text-xl">
-            Discover and deploy specialized AI agents for your industry. Embrace the future of chat-based interfaces and
-            boost your productivity.
+          <p className="mx-auto mt-3 text-[#232946] max-w-md text-base text-muted-foreground sm:text-lg md:mt-5 md:max-w-3xl md:text-xl">
+          Host your future with Agentia World—where specialized vertical AI agents deploy on-demand to revolutionize global industries.
+          From healthcare to logistics, empower your business with precision, speed, and scalable intelligence. Transform operations instantly, 
+          the next era of enterprise starts here. Your vision, powered by the world&apos;s most adaptive AI ecosystem.
           </p>
           <div className="mx-auto  mt-5 max-w-md sm:flex sm:justify-center md:mt-8">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
