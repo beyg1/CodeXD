@@ -1,6 +1,3 @@
-"use client"
-
-import { motion } from "framer-motion"
 import { Linkedin, Twitter } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
@@ -8,36 +5,36 @@ import Image from "next/image"
 export default function Team() {
   const team = [
     {
-      name: "Sarah Johnson",
+      name: "Sir Zia",
       role: "CEO & Founder",
-      bio: "Former AI Research Lead at Tech Giants",
+      bio: "AI Researcher. 25+ years of making future tech leaders",
       linkedin: "#",
       twitter: "#",
-      image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=300"
+      image: "/sir-zia.png"
     },
     {
-      name: "Michael Chen",
+      name: "Sir Qasim",
       role: "CTO",
-      bio: "15+ years in Machine Learning",
+      bio: "5+ years in Machine Learning",
       linkedin: "#",
       twitter: "#",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300"
+      image: "/sir-qasim.png"
     },
     {
-      name: "Emily Brown",
+      name: "Sir Junaid",
       role: "Head of AI Research",
-      bio: "PhD in Computer Science",
+      bio: "Hackathon Winner. 5+ years in AI Research",
       linkedin: "#",
       twitter: "#",
-      image: "https://images.pexels.com/photos/3799986/pexels-photo-3799986.jpeg?auto=compress&cs=tinysrgb&w=300"
+      image: "/sir-junaid.png"
     },
     {
-      name: "David Kim",
-      role: "Lead Developer",
+      name: "Sir Jahanzaib",
+      role: "Head of Web Operations & Cloud infrastructure",
       bio: "Full-stack AI Developer",
       linkedin: "#",
       twitter: "#",
-      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=300"
+      image: "/sir-jhanzaib.png"
     }
   ]
 
@@ -52,11 +49,8 @@ export default function Team() {
         </div>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {team.map((member, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="text-center p-6 bg-background rounded-lg shadow-lg"
             >
               <div className="relative w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
@@ -72,14 +66,14 @@ export default function Team() {
               <p className="text-gray-500 mb-2">{member.role}</p>
               <p className="text-sm text-gray-500 mb-4">{member.bio}</p>
               <div className="flex justify-center space-x-4">
-                <Link href={member.linkedin} className="text-gray-500 hover:text-primary">
+                <Link href={member.linkedin} className="text-gray-500 hover:text-blue-800">
                   <Linkedin className="w-5 h-5" />
                 </Link>
                 <Link href={member.twitter} className="text-gray-500 hover:text-primary">
                   <Twitter className="w-5 h-5" />
                 </Link>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -1,8 +1,5 @@
-"use client"
-
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import { Card, CardContent } from "@/components/ui/card"
-import { motion } from "framer-motion"
 import { Star } from "lucide-react"
 
 const testimonials = [
@@ -11,21 +8,21 @@ const testimonials = [
     role: "CTO, TechCorp",
     content: "Agentia's AI solutions have transformed our business operations. The results exceeded our expectations.",
     rating: 5,
-    avatar: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150"
+    avatar: "/test1.png"
   },
   {
     name: "Lisa Chen",
     role: "CEO, StartupX",
     content: "Working with Agentia was a game-changer. Their AI expertise helped us scale efficiently.",
     rating: 5,
-    avatar: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=150"
+    avatar: "/test3.png"
   },
   {
     name: "Mike Johnson",
     role: "Director, InnovateNow",
     content: "The team at Agentia delivers exceptional results. Their AI solutions are cutting-edge.",
     rating: 5,
-    avatar: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=150"
+    avatar: "/test2.png"
   }
 ]
 
@@ -41,12 +38,7 @@ export default function Testimonials() {
         </div>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
+            <div key={index}>
               <Card>
                 <CardContent className="p-6">
                   <div className="flex mb-4">
@@ -57,8 +49,7 @@ export default function Testimonials() {
                   <p className="text-gray-500 mb-6">{testimonial.content}</p>
                   <div className="flex items-center gap-4">
                     <Avatar>
-                      <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
-                      <AvatarFallback>{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                      <AvatarImage src={testimonial.avatar} alt={testimonial.name} />                      
                     </Avatar>
                     <div>
                       <h4 className="font-bold">{testimonial.name}</h4>
@@ -67,7 +58,7 @@ export default function Testimonials() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

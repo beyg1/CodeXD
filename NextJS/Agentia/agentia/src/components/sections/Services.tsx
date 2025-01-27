@@ -1,7 +1,4 @@
-"use client"
-
-import { motion } from "framer-motion"
-import { Brain, Bot , Database, Clock } from "lucide-react"
+import { Brain, Bot, Database, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function Services() {
@@ -55,11 +52,8 @@ export default function Services() {
         </div>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="flex flex-col p-6 bg-muted rounded-lg shadow-lg"
             >
               <div className="mb-4">{service.icon}</div>
@@ -78,7 +72,7 @@ export default function Services() {
                 ))}
               </ul>
               <Button className="mt-auto" size="lg">Get Started</Button>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

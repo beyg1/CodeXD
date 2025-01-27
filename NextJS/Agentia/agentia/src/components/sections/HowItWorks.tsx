@@ -1,6 +1,3 @@
-"use client"
-
-import { motion } from "framer-motion"
 import { Search, FileCode, Settings, CheckCircle } from "lucide-react"
 
 export default function HowItWorks() {
@@ -38,11 +35,8 @@ export default function HowItWorks() {
         </div>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative p-6 bg-muted rounded-lg shadow-lg"
             >
               {index < steps.length - 1 && (
@@ -53,7 +47,7 @@ export default function HowItWorks() {
               <div className="mb-4">{step.icon}</div>
               <h3 className="text-xl font-bold mb-2">{step.title}</h3>
               <p className="text-gray-500">{step.description}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
