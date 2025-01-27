@@ -6,7 +6,7 @@ import { Mail, Phone, MapPin } from "lucide-react"
 
 export default function Contact() {
   return (
-    <section className="py-24 bg-muted">
+    <section className="py-24 bg-muted bg-gradient-to-b from-primary/10 to-background bg-[#b8c1ec]">
       <div className="container px-4 md:px-6">
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="space-y-8">

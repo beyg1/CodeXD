@@ -39,7 +39,7 @@ export default function Team() {
   ]
 
   return (
-    <section className="min-h-screen w-full flex items-center justify-center bg-muted">
+    <section className="min-h-screen w-full flex items-center justify-center bg-muted bg-gradient-to-b from-primary/10 to-background bg-[#b8c1ec]">
       <div className="container px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Team</h2>

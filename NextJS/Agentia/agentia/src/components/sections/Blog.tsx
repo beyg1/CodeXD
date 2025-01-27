@@ -27,7 +27,7 @@ export default function Blog() {
   ]
 
   return (
-    <section className="py-24 bg-muted">
+    <section className="py-24 bg-muted bg-gradient-to-b from-primary/10 to-background bg-[#b8c1ec]">
       <div className="container px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Latest Insights</h2>

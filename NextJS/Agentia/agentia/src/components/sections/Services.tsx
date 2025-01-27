@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 export default function Services() {
   const services = [
     {
-      icon: <Brain className="w-12 h-12 text-primary" />,
+      icon: <Brain className="w-12 h-12 text-[#d9376e]" />,
       title: "AI Consulting",
       description: "Strategic guidance on implementing AI solutions for your business needs.",
       price: "$1,999",
@@ -16,7 +16,7 @@ export default function Services() {
       ]
     },
     {
-      icon: <Bot className="w-12 h-12 text-primary" />,
+      icon: <Bot className="w-12 h-12 text-[#d9376e]" />,
       title: "Machine Learning",
       description: "Custom ML models designed to solve your specific business challenges.",
       price: "$2,999",
@@ -28,7 +28,7 @@ export default function Services() {
       ]
     },
     {
-      icon: <Database className="w-12 h-12 text-primary" />,
+      icon: <Database className="w-12 h-12 text-[#d9376e]" />,
       title: "Data Analytics",
       description: "Transform your raw data into actionable business insights.",
       price: "$1,499",
@@ -42,11 +42,11 @@ export default function Services() {
   ]
 
   return (
-    <section className="min-h-screen w-full flex items-center justify-center bg-background">
+    <section className="min-h-screen w-full flex items-center justify-center bg-gradient-to-b from-primary/10 to-background bg-[#b8c1ec]">
       <div className="container px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Services</h2>
-          <p className="mt-4 text-gray-500 md:text-xl">
+          <h2 className="text-3xl font-bold tracking-tighter text-[#d9376e] sm:text-4xl md:text-5xl">Our Services</h2>
+          <p className="mt-4 text-[#232946] md:text-xl">
             Comprehensive AI solutions tailored to your business needs
           </p>
         </div>
@@ -54,13 +54,13 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="flex flex-col p-6 bg-muted rounded-lg shadow-lg"
+              className="flex flex-col p-6 bg-muted rounded-lg bg-[#eff0f3] shadow-lg"
             >
               <div className="mb-4">{service.icon}</div>
-              <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-              <p className="text-gray-500 mb-4">{service.description}</p>
+              <h3 className="text-xl font-bold mb-2 text-[#232946]">{service.title}</h3>
+              <p className="text-[#232946] mb-4">{service.description}</p>
               <div className="mb-6">
-                <span className="text-3xl font-bold">{service.price}</span>
+                <span className="text-3xl text-[#d9376e] font-bold">{service.price}</span>
                 <span className="text-gray-500">/month</span>
               </div>
               <ul className="mb-6 space-y-2">
