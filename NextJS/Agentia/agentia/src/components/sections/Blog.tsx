@@ -1,7 +1,4 @@
-"use client"
-
 import { Button } from "@/components/ui/button"
-import { motion } from "framer-motion"
 import Link from "next/link"
 
 export default function Blog() {
@@ -37,11 +34,8 @@ export default function Blog() {
         </div>
         <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-background rounded-lg shadow-lg bg-[#eff0f3] overflow-hidden"
             >
               <div className="p-4 md:p-6">
@@ -55,7 +49,7 @@ export default function Blog() {
                   </Button>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
