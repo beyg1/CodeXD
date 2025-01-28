@@ -8,8 +8,8 @@ export default function Hero() {
       <div className="container relative z-10 mx-auto h-full flex flex-col justify-center px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-3xl font-extrabold tracking-tight text-primary sm:text-5xl md:text-6xl">
-            <span className="block py-2 text-4xl sm:text-5xl md:text-6xl text-[#d9376e]">Agentia World</span>
-            <span className="block text-[#232946] py-3 sm:py-5 font-semibold text-2xl sm:text-3xl md:text-4xl">Hub for Vertical AI Agents</span>
+            <span className="block py-2  sm:text-5xl md:text-7xl text-[#d9376e]">Agentia World</span>
+            <span className="text-[#232946] py-3 sm:py-5 font-semibold sm:text-3xl md:text-4xl">Hub of Vertical AI Agents</span>
           </h1>
           <p className="mx-auto mt-3 text-[#232946] max-w-md text-sm  sm:text-lg md:mt-5 md:max-w-3xl md:text-xl px-4">
           Host your future with Agentia World—where specialized vertical AI agents deploy on-demand to revolutionize global industries.
