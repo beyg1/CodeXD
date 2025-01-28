@@ -11,7 +11,7 @@ export default function Contact() {
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="space-y-6 md:space-y-8">
             <div>
-              <h2 className="text-3xl text-[#d9376e] font-bold tracking-tighter sm:text-4xl md:text-5xl">Get in Touch</h2>
+              <h2 className="text-3xl text-[#4237d9] font-bold tracking-tighter sm:text-4xl md:text-5xl">Get in Touch</h2>
               <p className="mt-4 text-[#2a2a2a] md:text-xl">
                 Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
               </p>

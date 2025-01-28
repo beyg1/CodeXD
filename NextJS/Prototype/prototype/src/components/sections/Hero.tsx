@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="container relative z-10 mx-auto h-full flex flex-col justify-center px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-3xl font-extrabold tracking-tight text-primary sm:text-5xl md:text-6xl">
-            <span className="block py-2  sm:text-5xl md:text-7xl text-[#d9376e]">Agentia World</span>
+            <span className="block py-2  sm:text-5xl md:text-7xl text-[#4237d9]">Agentia World</span>
             <span className="text-[#232946] py-3 sm:py-5 font-semibold sm:text-3xl md:text-4xl">Hub of Vertical AI Agents</span>
           </h1>
           <p className="mx-auto mt-3 text-[#232946] max-w-md text-sm  sm:text-lg md:mt-5 md:max-w-3xl md:text-xl px-4">
@@ -44,7 +44,7 @@ export default function Hero() {
                     key={feature.title}
                     className="flex flex-col items-center p-2"
                   >
-                    <feature.icon className="h-8 w-8 sm:h-12 sm:w-12 text-[#d9376e]" />
+                    <feature.icon className="h-8 w-8 sm:h-12 sm:w-12 text-[#4237d9]" />
                     <h3 className="mt-2 sm:mt-4 text-base sm:text-lg font-medium text-[#232946] text-center">{feature.title}</h3>
                   </div>
                 ))}

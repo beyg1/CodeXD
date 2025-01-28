@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 export default function Services() {
   const services = [
     {
-      icon: <Brain className="w-12 h-12 text-[#d9376e]" />,
+      icon: <Brain className="w-12 h-12 text-[#c637d9]" />,
       title: "Agentic Consulting",
       description: "Pre-defined Strategic guidance on implementing Agentic solutions for your business needs.",
       price: "$999",
@@ -16,7 +16,7 @@ export default function Services() {
       ]
     },
     {
-      icon: <Bot className="w-12 h-12 text-[#d9376e]" />,
+      icon: <Bot className="w-12 h-12 text-[#4237d9]" />,
       title: "Deep Agentic",
       description: "Custom Agentic Solutions tailered specifically to solve your business challenges.",
       price: "$1499",
@@ -28,7 +28,7 @@ export default function Services() {
       ]
     },
     {
-      icon: <Database className="w-12 h-12 text-[#d9376e]" />,
+      icon: <Database className="w-12 h-12 text-[#c5bc47]" />,
       title: "Agentic Enterprise",
       description: "Transform your business empire with a swarm of thousands of Agentia agents.",
       price: "$2,499",
@@ -45,7 +45,7 @@ export default function Services() {
     <section className="relative overflow-hidden bg-gradient-to-b from-primary/10 to-background py-16 md:py-24 bg-[#b8c1ec]">
       <div className="container px-4 md:px-6">
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-3xl font-bold tracking-tighter text-[#d9376e] sm:text-4xl md:text-5xl">Our Services</h2>
+          <h2 className="text-3xl font-bold tracking-tighter text-[#4237d9] sm:text-4xl md:text-5xl">Our Services</h2>
           <p className="mt-4 text-[#232946] md:text-xl">
             Comprehensive AI solutions tailored to your business needs
           </p>

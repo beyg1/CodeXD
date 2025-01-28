@@ -3,32 +3,32 @@ import { Monitor, Shield, Zap, LineChart, CloudLightning, Code2 } from "lucide-r
 export default function Features() {
   const features = [
     {
-      icon: <Monitor className="w-12 h-12 text-[#d9376e]" />,
+      icon: <Monitor className="w-12 h-12 text-[#168c18]" />,
       title: "Smart Analytics",
       description: "Advanced analytics powered by AI to help you make data-driven decisions."
     },
     {
-      icon: <Shield className="w-12 h-12 text-[#d9376e]" />,
+      icon: <Shield className="w-12 h-12 text-[#ff3030]" />,
       title: "Secure Platform",
       description: "Enterprise-grade security to protect your sensitive data."
     },
     {
-      icon: <Zap className="w-12 h-12 text-[#d9376e]" />,
+      icon: <Zap className="w-12 h-12 text-[#37d9a3]" />,
       title: "Fast Processing",
       description: "Lightning-fast processing of complex AI tasks and operations."
     },
     {
-      icon: <LineChart className="w-12 h-12 text-[#d9376e]" />,
+      icon: <LineChart className="w-12 h-12 text-[#21818c]" />,
       title: "Real-time Insights",
       description: "Get instant insights and predictions for your business needs."
     },
     {
-      icon: <CloudLightning className="w-12 h-12 text-[#d9376e]" />,
+      icon: <CloudLightning className="w-12 h-12 text-[#6a37d9]" />,
       title: "Cloud Integration",
       description: "Seamless integration with major cloud platforms and services."
     },
     {
-      icon: <Code2 className="w-12 h-12 text-[#d9376e]" />,
+      icon: <Code2 className="w-12 h-12 text-[#d937b6]" />,
       title: "API Access",
       description: "Robust API endpoints for custom integration and automation."
     }
@@ -38,7 +38,7 @@ export default function Features() {
     <section className="relative overflow-hidden bg-gradient-to-b from-primary/10 to-background py-16 md:py-24 bg-[#b8c1ec]">
       <div className="container px-4 md:px-6">
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-3xl font-bold text-[#d9376e] tracking-tighter sm:text-4xl md:text-5xl">Agentic Features</h2>
+          <h2 className="text-3xl font-bold text-[#4237d9] tracking-tighter sm:text-4xl md:text-5xl">Agentic Features</h2>
           <p className="mt-4 text-[#232946] md:text-xl">
             Discover the cloud based solutions that make our AI services stand out
           </p>

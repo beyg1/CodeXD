@@ -10,7 +10,7 @@ export default function Team() {
       bio: "AI Researcher. 25+ years of making future tech leaders",
       linkedin: "#",
       twitter: "#",
-      image: "/sir-zia.png"
+      image: "/sir-zia.webp"
     },
     {
       name: "Sir Qasim",
@@ -18,7 +18,7 @@ export default function Team() {
       bio: "5+ years in Machine Learning",
       linkedin: "#",
       twitter: "#",
-      image: "/sir-qasim.png"
+      image: "/sir-qasim.webp"
     },
     {
       name: "Sir Junaid",
@@ -26,7 +26,7 @@ export default function Team() {
       bio: "Hackathon Winner. 5+ years in AI Research",
       linkedin: "#",
       twitter: "#",
-      image: "/sir-junaid.png"
+      image: "/sir-junaid.webp"
     },
     {
       name: "Sir Jahanzaib",
@@ -34,7 +34,7 @@ export default function Team() {
       bio: "Full-stack AI Developer",
       linkedin: "#",
       twitter: "#",
-      image: "/sir-jhanzaib.png"
+      image: "/sir-jhanzaib.webp"
     }
   ]
 
@@ -42,9 +42,9 @@ export default function Team() {
     <section className="relative overflow-hidden bg-gradient-to-b from-primary/10 to-background py-16 md:py-24 bg-[#b8c1ec]">
       <div className="container px-4 md:px-6">
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-3xl font-bold tracking-tighter text-[#d9376e] sm:text-4xl md:text-5xl">Our Team</h2>
+          <h2 className="text-3xl font-bold tracking-tighter text-[#4237d9] sm:text-4xl md:text-5xl">Leaders who made this possible</h2>
           <p className="mt-4 text-[#232946] md:text-xl">
-            Meet the experts behind our AI innovations
+            Meet the Experts behind Market Leading Innovation
           </p>
         </div>
         <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-4">
