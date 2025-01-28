@@ -32,21 +32,21 @@ export default function Hero() {
 
         <div className="mt-12 sm:mt-16 lg:mt-24">
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="relative overflow-hidden rounded-lg shadow-xl">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-75"></div>
-              <div className="relative bg-[#eff0f3] grid grid-cols-2 gap-6 px-6 py-8 sm:gap-8 sm:px-12 sm:py-12 lg:grid-cols-4">
+            <div className="relative overflow-hidden  rounded-lg shadow-xl">
+              <div className=""></div>
+              <div className="relative bg-[#eff0f3]  grid grid-cols-2 gap-6 px-6 py-8 sm:gap-8 sm:px-12 sm:py-12 lg:grid-cols-4">
                 {[
                   { icon: Bot, title: "Specialized Agents" },
                   { icon: MessageSquare, title: "Chat Interface" },
                   { icon: Search, title: "Easy Discovery" },
                   { icon: Zap, title: "Instant Deployment" },
-                ].map((feature) => (
+                ].map((feature) => (                  
                   <div
                     key={feature.title}
-                    className="flex flex-col items-center text-center"
+                    className="flex flex-col items-center"
                   >
-                    <feature.icon className="h-12 w-12 text-background text-[#d9376e]" />
-                    <h3 className="mt-4 text-lg font-medium text-background text-[#2a2a2a]">{feature.title}</h3>
+                    <feature.icon className="h-12 w-12 text-[#d9376e]" />
+                    <h3 className="mt-4 text-lg font-medium  text-[#232946]">{feature.title}</h3>
                   </div>
                 ))}
               </div>
