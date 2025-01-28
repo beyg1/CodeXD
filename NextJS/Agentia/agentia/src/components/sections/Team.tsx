@@ -51,7 +51,7 @@ export default function Team() {
           {team.map((member, index) => (
             <div
               key={index}
-              className="text-center p-4 bg-[#eff0f3] md:p-6 bg-background rounded-lg shadow-lg"
+              className="text-center p-4 bg-[#eff0f3] md:p-6  rounded-lg shadow-lg"
             >
               <div className="relative w-24 h-24 md:w-32 md:h-32 mx-auto mb-4 overflow-hidden rounded-full">
                 <Image

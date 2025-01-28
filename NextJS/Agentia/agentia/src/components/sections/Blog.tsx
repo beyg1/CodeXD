@@ -36,7 +36,7 @@ export default function Blog() {
           {posts.map((post, index) => (
             <div
               key={index}
-              className="bg-background rounded-lg shadow-lg bg-[#eff0f3] overflow-hidden"
+              className=" rounded-lg shadow-lg bg-[#eff0f3] overflow-hidden"
             >
               <div className="p-4 md:p-6">
                 <div className="text-sm text-[#232946] mb-2">{post.category}</div>
