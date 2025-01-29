@@ -7,7 +7,7 @@ import { Mail, Phone, MapPin } from "lucide-react"
 export default function Contact() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-primary/10 to-background py-16 md:py-24 bg-[#b8c1ec]">
-      <div className="container px-4 md:px-6">
+      <div className="container relative z-10 mx-auto h-full flex flex-col justify-center px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="space-y-6 md:space-y-8">
             <div>
