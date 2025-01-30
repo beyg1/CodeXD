@@ -28,9 +28,9 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-primary/10 to-background py-16 md:py-24 bg-[#b8c1ec]">
-      <div className="container relative z-10 mx-auto h-full flex flex-col justify-center px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8 md:mb-16">
+    <section className="relative overflow-hidden h-screen bg-[#b8c1ec] flex flex-col">
+      <div className="container relative  mx-auto flex-1 flex flex-col justify-center">
+        <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tighter text-[#4237d9] sm:text-4xl md:text-5xl">Testimonials</h2>
           <p className="mt-4 c md:text-xl">
             See what our clients say about us
