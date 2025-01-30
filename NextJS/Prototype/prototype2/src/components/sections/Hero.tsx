@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Bot, MessageSquare, Search, Zap, Brain } from "lucide-react";
 import Link from "next/link";
-import Tooltip from "@/components/ui/Tooltip";
+
 
 export default function Hero() {
   const options = [
@@ -27,8 +27,8 @@ export default function Hero() {
     },
   ];
 
-  return (
-    <section className="relative overflow-hidden min-h-[800px] lg:min-h-screen bg-[#c7d1e9] flex flex-col">
+  return (    
+    <section className="relative overflow-hidden min-h-[800px] lg:min-h-screen flex flex-col">
       <div className="container relative mx-auto flex-1 flex flex-col justify-center">
         <div className="text-center">
           <h1 className="text-3xl font-extrabold tracking-tight text-primary sm:text-5xl md:text-6xl flex flex-col items-center justify-center">
@@ -49,13 +49,13 @@ be it OpenSource AI Agents or AI Agents as a Service. It will be Your vision, po
           </p>
           <div className="mx-auto mt-5 max-w-md flex flex-col sm:flex-row sm:justify-center md:mt-8 space-y-3 sm:space-y-0 sm:space-x-3 px-4">
             <div className="transform hover:scale-105 active:scale-95 transition-transform">
-              <Button asChild size="lg" className="rounded-full w-full sm:w-auto">
-                <Link href="#">Explore AI Agents SDK</Link>
+              <Button asChild size="lg" className="rounded-full bg-black hover:bg-white w-full sm:w-auto">
+               <Link href="#" className="text-white hover:text-black">Explore AI Agents SDK</Link>
               </Button>
             </div>
             <div className="transform hover:scale-105 active:scale-95 transition-transform">
-              <Button asChild variant="outline" size="lg" className="rounded-full w-full sm:w-auto">
-                <Link href="#">AI Agents as A Service</Link>
+              <Button asChild variant="outline" size="lg" className="bg-black hover:bg-white rounded-full w-full sm:w-auto">
+               <Link href="#" className="text-white hover:text-black">AI Agents as A Service</Link>
               </Button>
             </div>
           </div>
@@ -64,18 +64,20 @@ be it OpenSource AI Agents or AI Agents as a Service. It will be Your vision, po
         <div className="mt-8 sm:mt-12 lg:mt-16">
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="relative overflow-hidden rounded-lg shadow-xl">
-              <div className="relative bg-[#eff0f3] grid grid-cols-2 gap-4 sm:gap-6 px-4 py-6 sm:px-12 sm:py-12 lg:grid-cols-4">
+              <div className="relative grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 px-4 sm:px-6">
                 {options.map((feature) => (
-                  <div key={feature.title} className="flex flex-col items-center p-2 group relative">
-                    <div className="mb-4">{feature.icon}</div>
-                    <div className="relative w-full">
-                      <h2 className="mt-2 sm:mt-4 text-base sm:text-lg font-medium text-[#232946] text-center group-hover:hidden">
-                        {feature.title}
-                      </h2>
-                      <Tooltip content={feature.description} />
-                    </div>
-                  </div>
-                ))}
+<div key={feature.title} className="bg-[#eff0f3] rounded-lg shadow-xl p-6 sm:p-8 transition-all hover:shadow-2xl flex flex-col items-center space-y-2">
+  <div>{feature.icon}</div>
+  <div className="relative w-full">
+    <h2 className="text-base sm:text-lg font-medium text-[#232946] text-center">
+      {feature.title}
+    </h2>
+    <p className="mt-2 text-sm text-gray-600 text-center">
+      {feature.description}
+    </p>
+  </div>
+</div>
+))}
               </div>
             </div>
           </div>

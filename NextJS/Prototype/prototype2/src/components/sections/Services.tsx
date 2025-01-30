@@ -42,7 +42,7 @@ export default function Services() {
   ]
 
   return (
-    <section className="relative overflow-hidden min-h-[600px] lg:min-h-screen bg-[#c7d1e9] flex flex-col">
+    <section className="relative overflow-hidden min-h-[600px] lg:min-h-screen flex flex-col">
       <div className="container relative mx-auto flex-1 flex flex-col justify-center px-4 mt-16 md:mt-24">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tighter text-[#4237d9] sm:text-4xl md:text-5xl">Our Services</h2>
