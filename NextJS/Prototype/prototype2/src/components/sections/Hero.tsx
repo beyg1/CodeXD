@@ -1,17 +1,17 @@
 import { Button } from "@/components/ui/button"
-import { Bot, MessageSquare, Search, Zap } from "lucide-react"
+import { Bot, MessageSquare, Search, Zap, Brain } from "lucide-react"
 import Link from "next/link"
 import Tooltip from "@/components/ui/Tooltip"
 
 export default function Hero() {
   const options = [
     {
-      icon: <Bot className="w-12 h-12 text-[#168c18]" />,
+      icon: <Bot className="w-12 h-12 text-[#4237d9]" />,
       title: "AI AGENTS SDK",
       description: "Download the SDK's for opensource agents and start building."
     },
     {
-      icon: <MessageSquare className="w-12 h-12 text-[#ff3030]" />,
+      icon: <MessageSquare className="w-12 h-12 text-[#d34457]" />,
       title: "CUI",
       description: "Hit those Goals with Chat User Interface for your business needs."
     },
@@ -21,19 +21,22 @@ export default function Hero() {
       description: "Get cutting edge Agents as React Components for Web."
     },
     {
-      icon: <Search className="w-12 h-12 text-[#21818c]" />,
+      icon: <Search className="w-12 h-12 text-[#1c9251]" />,
       title: "Search Agents",
       description: "Search for agents that can help you with your business needs."
     },
   ]
   return (
-    <section className="relative overflow-hidden min-h-[800px] lg:min-h-screen bg-slate-400 flex flex-col">
+    <section className="relative overflow-hidden min-h-[800px] lg:min-h-screen bg-[#6c65c9] flex flex-col">
       <div className="container relative mx-auto flex-1 flex flex-col justify-center">
-        <div className="text-center">
-          <h1 className="text-3xl font-extrabold tracking-tight text-primary sm:text-5xl md:text-6xl">
-            <span className="block py-2  sm:text-5xl md:text-7xl text-[#4237d9]">Agentia World</span>
-            <span className="text-[#232946] py-3 sm:py-5 font-semibold sm:text-3xl md:text-4xl">Hub of Vertical AI Agents</span>
-          </h1>
+<div className="text-center">
+<h1 className="text-3xl font-extrabold tracking-tight text-primary sm:text-5xl md:text-6xl flex flex-col items-center justify-center">
+<div className="flex items-center mr-[10%]">
+  <Brain className="w-20 h-20 text-blue-400 animate-pulse mr-4" />
+  <span className="block py-2 sm:text-5xl md:text-7xl text-[#4237d9] text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-violet-500 animate-gradient">Agentia World</span>
+</div>
+<span className="text-[#232946] py-3 sm:py-5 font-semibold sm:text-3xl md:text-4xl mt-4">Hub of Vertical AI Agents</span>
+</h1>
           <p className="mx-auto mt-3 text-[#232946] max-w-md text-sm  sm:text-lg md:mt-5 md:max-w-3xl md:text-xl px-4">
           Host your future with Agentia World—where specialized vertical AI agents deploy on-demand to revolutionize global industries.
           From healthcare to logistics, empower your business with precision, speed, and scalable intelligence. Transform operations instantly,
