@@ -38,11 +38,11 @@ export default function Hero() {
                 Agentia World
               </span>
             </div>
-            <span className="text-[#232946] py-3 sm:py-5 font-semibold sm:text-3xl md:text-4xl mt-4">
+            <span className=" py-3 sm:py-5 font-semibold sm:text-3xl md:text-4xl mt-4">
               Hub of Vertical AI Agents
             </span>
           </h1>
-          <p className="mx-auto mt-3 text-[#232946] max-w-md text-sm sm:text-lg md:mt-5 md:max-w-3xl md:text-xl px-4">
+          <p className="mx-auto mt-3  max-w-md text-sm sm:text-lg md:mt-5 md:max-w-3xl md:text-xl px-4">
 Agentify your business with Agentia World—where specialized vertical AI agents deploy on-demand to revolutionize global industries.
 From healthcare to logistics, empower your business with precision, speed, and scalable intelligence. Transform operations instantly,
 be it OpenSource AI Agents or AI Agents as a Service. It will be Your vision, powered by the world&#39;s most adaptive AI ecosystem.

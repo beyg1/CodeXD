@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useRef } from 'react';
 import { motion, useAnimation, useMotionValue } from 'framer-motion';
 
@@ -136,7 +135,7 @@ export default function NeuralBackground() {
         }
       });
 
-if (closestDistance < 20) {
+      if (closestDistance < 20) {
         hoveredNodeIndex.current = closestNodeIndex;
       } else {
         hoveredNodeIndex.current = null;
