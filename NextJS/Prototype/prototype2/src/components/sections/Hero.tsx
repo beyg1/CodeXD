@@ -1,10 +1,33 @@
 import { Button } from "@/components/ui/button"
 import { Bot, MessageSquare, Search, Zap } from "lucide-react"
 import Link from "next/link"
+import Tooltip from "@/components/ui/Tooltip"
 
 export default function Hero() {
+  const options = [
+    {
+      icon: <Bot className="w-12 h-12 text-[#168c18]" />,
+      title: "AI AGENTS SDK",
+      description: "Download the SDK's for opensource agents and start building."
+    },
+    {
+      icon: <MessageSquare className="w-12 h-12 text-[#ff3030]" />,
+      title: "CUI",
+      description: "Hit those Goals with Chat User Interface for your business needs."
+    },
+    {
+      icon: <Zap className="w-12 h-12 text-[#37d9a3]" />,
+      title: "Agents As a Service",
+      description: "Get cutting edge Agents as React Components for Web."
+    },
+    {
+      icon: <Search className="w-12 h-12 text-[#21818c]" />,
+      title: "Search Agents",
+      description: "Search for agents that can help you with your business needs."
+    },
+  ]
   return (
-    <section className="relative overflow-hidden min-h-[800px] lg:min-h-screen bg-[#b8c1ec] flex flex-col">
+    <section className="relative overflow-hidden min-h-[800px] lg:min-h-screen bg-slate-400 flex flex-col">
       <div className="container relative mx-auto flex-1 flex flex-col justify-center">
         <div className="text-center">
           <h1 className="text-3xl font-extrabold tracking-tight text-primary sm:text-5xl md:text-6xl">
@@ -34,19 +57,17 @@ export default function Hero() {
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="relative overflow-hidden rounded-lg shadow-xl">
               <div className="relative bg-[#eff0f3] grid grid-cols-2 gap-4 sm:gap-6 px-4 py-6 sm:px-12 sm:py-12 lg:grid-cols-4">
-                {[
-                  { icon: Bot, title: "Specialized Agents" },
-                  { icon: MessageSquare, title: "Chat Interface" },
-                  { icon: Search, title: "Easy Discovery" },
-                  { icon: Zap, title: "Instant Deployment" },
-                ].map((feature) => (
-                  <div
-                    key={feature.title}
-                    className="flex flex-col items-center p-2"
-                  >
-                    <feature.icon className="h-8 w-8 sm:h-12 sm:w-12 text-[#4237d9]" />
-                    <h2 className="mt-2 sm:mt-4 text-base sm:text-lg font-medium text-[#232946] text-center">{feature.title}</h2>
-                  </div>
+                {options.map((feature) => (
+<div
+  key={feature.title}
+  className="flex flex-col items-center p-2 group relative"
+>
+  <div className="mb-4">{feature.icon}</div>
+  <div className="relative w-full">
+    <h2 className="mt-2 sm:mt-4 text-base sm:text-lg font-medium text-[#232946] text-center group-hover:hidden">{feature.title}</h2>
+    <Tooltip content={feature.description} />
+  </div>
+</div>
                 ))}
               </div>
             </div>
