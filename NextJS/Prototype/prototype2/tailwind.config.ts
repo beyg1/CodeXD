@@ -1,12 +1,12 @@
 import type { Config } from "tailwindcss";
 import tailwindAnimate from "tailwindcss-animate";
 
-export default {
-    darkMode: ["class"],
-    content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+const config: Config = {
+	darkMode: ["class"],
+	content: [
+	"./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+	"./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+	"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
   	extend: {
@@ -56,8 +56,52 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
+		},
+		animation: {
+			'gradient': 'gradient 8s linear infinite',
+			'typing': 'typing 3.5s steps(40, end), blink .75s step-end infinite',
+			'fade-in': 'fadeIn 0.5s ease-in forwards',
+			'float': 'float 10s ease-in-out infinite',
+			'ellipsis': 'ellipsis 1.5s infinite steps(1)',
+			'blink': 'blink 1s infinite',
+		  },
+		  keyframes: {
+			gradient: {
+			  '0%, 100%': {
+				'background-size': '200% 200%',
+				'background-position': 'left center'
+			  },
+			  '50%': {
+				'background-size': '200% 200%',
+				'background-position': 'right center'
+			  },
+			},
+			typing: {
+			  from: { width: '0' },
+			  to: { width: '100%' }
+			},
+			blink: {
+			  '0%, 100%': { opacity: '0' },
+			  '50%': { opacity: '1' }
+			},
+			fadeIn: {
+			  '0%': { opacity: '0', transform: 'translateY(10px)' },
+			  '100%': { opacity: '1', transform: 'translateY(0)' }
+			},
+			float: {
+			  '0%, 100%': { transform: 'translate(0, 0)' },
+			  '50%': { transform: 'translate(10px, -10px)' }
+			},
+			ellipsis: {
+			  '0%': { content: '.' },
+			  '33%': { content: '..' },
+			  '66%': { content: '...' },
+			  '100%': { content: '' }
+			},
 		}
-	},
+	}
   },
   plugins: [tailwindAnimate]
-} satisfies Config;
+}
+
+export default config;

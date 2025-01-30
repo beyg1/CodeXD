@@ -70,3 +70,25 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes ellipsis {
+  0% { content: '.'; }
+  33% { content: '..'; }
+  66% { content: '...'; }
+  100% { content: ''; }
+}
+
+.animate-ellipsis {
+  display: inline-block;
+  width: 12px;
+  animation: ellipsis 1.5s infinite steps(1);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
