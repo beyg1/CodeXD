@@ -1,6 +1,4 @@
-'use client';
-
-import React, { memo, useEffect, useState } from 'react';
+import React from 'react';
 import { Cpu } from 'lucide-react';
 
 const styles = {
@@ -30,15 +28,7 @@ const styles = {
   icon: `w-4 h-4 text-blue-400`
 } as const;
 
-const AIStatusIndicator = memo(() => {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
+const AIStatusIndicator = () => {
   return (
     <div className={styles.container}>
       <span className={styles.indicator}>
@@ -49,8 +39,6 @@ const AIStatusIndicator = memo(() => {
       <Cpu className={styles.icon} />
     </div>
   );
-});
-
-AIStatusIndicator.displayName = 'AIStatusIndicator';
+}
 
 export default AIStatusIndicator;
