@@ -5,10 +5,11 @@ import HowItWorks from "@/components/sections/HowItWorks";
 import Testimonials from "@/components/sections/Testimonials";
 import Footer from "@/components/sections/Footer";
 import AIStatusIndicator from "@/components/ui/AiStatus";
+import TerminalFeed from "@/components/ui/TerminalFeed";
 
 export default function Home() {
   return (
-    <>
+    <>      
       <AIStatusIndicator />
       <Hero />
       <Features />
@@ -16,6 +17,7 @@ export default function Home() {
       <HowItWorks />
       <Testimonials />
       <Footer />
+      <TerminalFeed />
     </>
   );
 }
