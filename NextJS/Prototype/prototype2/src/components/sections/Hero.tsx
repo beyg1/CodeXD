@@ -31,7 +31,7 @@ export default function Hero() {
       <div className="container relative mx-auto flex-1 flex flex-col justify-center">
 <div className="text-center">
 <h1 className="text-3xl font-extrabold tracking-tight text-primary sm:text-5xl md:text-6xl flex flex-col items-center justify-center">
-<div className="flex items-center mr-[10%]">
+<div className="flex items-center mr-[10%] mt-8 sm:mt-0">
   <Brain className="w-20 h-20 text-blue-400 animate-pulse mr-4" />
   <span className="block py-2 sm:text-5xl md:text-7xl text-[#4237d9] text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-violet-500 animate-gradient">Agentia World</span>
 </div>
