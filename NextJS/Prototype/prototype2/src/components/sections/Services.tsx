@@ -42,19 +42,19 @@ export default function Services() {
   ]
 
   return (
-    <section className="relative overflow-hidden h-screen bg-[#b8c1ec] flex flex-col">
-      <div className="container relative  mx-auto flex-1 flex flex-col justify-center">
+    <section className="relative overflow-hidden min-h-[600px] lg:min-h-screen bg-[#b8c1ec] flex flex-col">
+      <div className="container relative mx-auto flex-1 flex flex-col justify-center px-4 mt-16 md:mt-24">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tighter text-[#4237d9] sm:text-4xl md:text-5xl">Our Services</h2>
           <p className="mt-4 text-[#232946] md:text-xl">
             Comprehensive AI solutions tailored to your business needs
           </p>
         </div>
-        <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <div
               key={index}
-              className="flex flex-col p-4 md:p-6 bg-muted rounded-lg bg-[#eff0f3] shadow-lg"
+              className="flex flex-col h-full p-4 md:p-6 bg-muted rounded-lg bg-[#eff0f3] shadow-lg"
             >
               <div className="mb-4">{service.icon}</div>
               <h3 className="text-xl font-bold mb-2 text-[#232946]">{service.title}</h3>
@@ -71,7 +71,7 @@ export default function Services() {
                   </li>
                 ))}
               </ul>
-              <Button className="mt-auto w-full md:w-auto" size="lg">Get Started</Button>
+              <Button className="mt-auto w-full" size="lg">Get Started</Button>
             </div>
           ))}
         </div>

@@ -35,17 +35,17 @@ export default function Features() {
   ]
 
   return (
-    <section className="relative overflow-hidden h-screen bg-[#b8c1ec] flex flex-col">
-      <div className="container relative  mx-auto flex-1 flex flex-col justify-center">
+    <section className="relative overflow-hidden min-h-[600px] md:min-h-screen bg-[#b8c1ec] flex flex-col ">
+      <div className="container relative mx-auto flex-1 flex flex-col justify-center px-4 sm:px-6">
         <div className="text-center">
           <h2 className="text-3xl font-bold text-[#4237d9] tracking-tighter sm:text-4xl md:text-5xl">Agentic Features</h2>
           <p className="mt-4 text-[#232946] md:text-xl">
             Discover the cloud based solutions that make our AI services stand out
           </p>
         </div>
-        <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => (
-            <div key={feature.title} className="p-4 md:p-6  bg-[#eff0f3] rounded-lg shadow-lg">
+            <div key={feature.title} className="w-full md:w-auto p-4 md:p-6 bg-[#eff0f3] rounded-lg shadow-lg">
               <div className="mb-4">{feature.icon}</div>
               <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
               <p className="text-[#232946]">{feature.description}</p>
