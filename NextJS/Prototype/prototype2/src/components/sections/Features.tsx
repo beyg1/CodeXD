@@ -43,7 +43,7 @@ export default function Features() {
             Discover the cloud-based solutions that make our AI services stand out
           </p>
         </div>
-        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="relative grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 px-4 sm:px-6">
           {features.map((feature) => (
             <div key={feature.title} className="w-full md:w-auto p-4 md:p-6 bg-[#eff0f3] rounded-lg shadow-lg">
               <div className="mb-4">{feature.icon}</div>

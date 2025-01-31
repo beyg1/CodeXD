@@ -45,8 +45,8 @@ export default function Services() {
     <section className="relative overflow-hidden min-h-[600px] lg:min-h-screen flex flex-col">
       <div className="container relative mx-auto flex-1 flex flex-col justify-center px-4 mt-16 md:mt-24">
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tighter text-[#4237d9] sm:text-4xl md:text-5xl">Our Services</h2>
-          <p className="mt-4 text-[#232946] md:text-xl">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Services</h2>
+          <p className="mt-4 md:text-xl">
             Comprehensive AI solutions tailored to your business needs
           </p>
         </div>
@@ -54,24 +54,24 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="flex flex-col h-full p-4 md:p-6 bg-muted rounded-lg bg-[#eff0f3] shadow-lg"
+              className="flex flex-col h-full p-4 md:p-6 bg-[#eff0f3]  rounded-lg shadow-lg"
             >
               <div className="mb-4">{service.icon}</div>
-              <h3 className="text-xl font-bold mb-2 text-[#232946]">{service.title}</h3>
-              <p className="text-[#232946] mb-4">{service.description}</p>
+              <h3 className="text-xl text-black font-bold mb-2">{service.title}</h3>
+              <p className=" mb-4 text-black">{service.description}</p>
               <div className="mb-4 md:mb-6">
-                <span className="text-3xl text-[#d9376e] font-bold">{service.price}</span>
-                <span className="text-gray-500">/month</span>
+                <span className="text-3xl text-black font-bold">{service.price}</span>
+                <span className="text-black">/month</span>
               </div>
               <ul className="mb-4 md:mb-6 space-y-2">
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center">
+                  <li key={featureIndex} className="flex text-[#232946] items-center">
                     <Clock className="w-5 h-5 mr-2 text-primary" />
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
-              <Button className="mt-auto w-full" size="lg">Get Started</Button>
+              <Button className="mt-auto w-full bg-black text-white hover:text-black hover:bg-gray-500" size="lg">Get Started</Button>
             </div>
           ))}
         </div>

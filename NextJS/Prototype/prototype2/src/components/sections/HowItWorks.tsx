@@ -28,16 +28,16 @@ export default function HowItWorks() {
     <section className="relative overflow-hidden min-h-[600px] lg:min-h-screen flex flex-col">
       <div className="container relative mx-auto flex-1 flex flex-col justify-center px-4 mt-16 md:mt-24  ">
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tighter text-[#4237d9] sm:text-4xl md:text-5xl">How It Works</h2>
-          <p className="mt-4 text-[#232946] md:text-xl">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">How It Works</h2>
+          <p className="mt-4 md:text-xl">
             Our proven process for delivering successful AI solutions
           </p>
         </div>
-        <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 md:gap-8  md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
             <div
               key={index}
-              className="relative p-4 md:p-6 bg-muted bg-[#eff0f3] rounded-lg shadow-lg"
+              className="relative p-4 md:p-6 bg-[#eff0f3] rounded-lg shadow-lg"
             >
               {index < steps.length - 1 && (
                 <div className="hidden lg:block absolute top-1/2 right-0 w-full h-2 transform translate-x-1/2">
@@ -45,7 +45,7 @@ export default function HowItWorks() {
                 </div>
               )}
               <div className="mb-4">{step.icon}</div>
-              <h3 className="text-xl font-bold text-[#232946] mb-2">{step.title}</h3>
+              <h3 className="text-xl font-bold text-black mb-2">{step.title}</h3>
               <p className="text-[#232946]">{step.description}</p>
             </div>
           ))}

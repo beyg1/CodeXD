@@ -31,7 +31,7 @@ export default function Testimonials() {
     <section className="relative overflow-hidden min-h-[600px] lg:min-h-screen flex flex-col">
       <div className="container relative mx-auto flex-1 flex flex-col justify-center px-4 mt-16 md:mt-24">
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tighter text-[#4237d9] sm:text-4xl md:text-5xl">Testimonials</h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Testimonials</h2>
           <p className="mt-4 c md:text-xl">
             See what our clients say about us
           </p>
@@ -46,14 +46,14 @@ export default function Testimonials() {
                       <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <p className="text-[#2a2a2a] mb-4 md:mb-6">{testimonial.content}</p>
+                  <p className="text-black font-medium mb-4 md:mb-6">{testimonial.content}</p>
                   <div className="flex items-center text-[#d9376e] gap-3 md:gap-4">
                     <Avatar>
                       <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
                     </Avatar>
                     <div>
                       <h3 className="font-bold text-sm md:text-base">{testimonial.name}</h3>
-                      <p className="text-sm text-[#2a2a2a]">{testimonial.role}</p>
+                      <p className="text-sm text-black">{testimonial.role}</p>
                     </div>
                   </div>
                 </CardContent>
