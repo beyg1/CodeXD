@@ -186,14 +186,14 @@ ctx.strokeStyle = isDarkMode
 
   return (
     <>
-<button
-  className={`absolute top-4 left-4 z-10 p-1 bg-transparent border rounded-full w-12 h-6 flex items-center ${isDarkMode ? 'border-white' : 'border-black'}`}
+<div
+  className={`absolute top-4 left-4 z-10 w-12 h-6 flex items-center rounded-full p-1 cursor-pointer ${isDarkMode ? 'bg-gray-700' : 'bg-gray-300'}`}
   onClick={() => setIsDarkMode(!isDarkMode)}
 >
   <div
-    className={`w-5 h-5 rounded-full shadow-md transform transition-transform duration-300 ${isDarkMode ? 'bg-white translate-x-5' : 'bg-black translate-x-0'}`}
+    className={`w-5 h-5 rounded-full shadow-md transform transition-transform duration-300 ${isDarkMode ? 'bg-white translate-x-6' : 'bg-black translate-x-0'}`}
   ></div>
-</button>
+</div>
       <motion.div
         className={`fixed inset-0 z-[-1] ${isDarkMode ? 'bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900' : 'bg-white'}`}
         animate={controls}
