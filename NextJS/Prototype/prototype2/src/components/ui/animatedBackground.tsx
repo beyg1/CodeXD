@@ -122,7 +122,9 @@ ctx.strokeStyle = isDarkMode
           ctx.beginPath();
           ctx.moveTo(hoveredNode.x, hoveredNode.y);
           ctx.lineTo(nearestNode.x, nearestNode.y);
-          ctx.strokeStyle = `rgba(0, 0, 0, ${0.5 + 0.5 * Math.abs(Math.sin(animationTime.current / 1000))})`;
+ctx.strokeStyle = isDarkMode
+  ? `rgba(255, 255, 255, ${0.5 + 0.5 * Math.abs(Math.sin(animationTime.current / 1000))})`
+  : `rgba(0, 0, 0, ${0.5 + 0.5 * Math.abs(Math.sin(animationTime.current / 1000))})`;
           ctx.lineWidth = 2 + 2 * Math.abs(Math.sin(animationTime.current / 1000));
           ctx.stroke();
         }
@@ -184,12 +186,14 @@ ctx.strokeStyle = isDarkMode
 
   return (
     <>
-      <button
-        className="absolute top-4 left-4 z-10 p-2 bg-white text-black rounded"
-onClick={() => setIsDarkMode(!isDarkMode)}
-      >
-        Toggle Mode
-      </button>
+<button
+  className={`absolute top-4 left-4 z-10 p-1 bg-transparent border rounded-full w-12 h-6 flex items-center ${isDarkMode ? 'border-white' : 'border-black'}`}
+  onClick={() => setIsDarkMode(!isDarkMode)}
+>
+  <div
+    className={`w-5 h-5 rounded-full shadow-md transform transition-transform duration-300 ${isDarkMode ? 'bg-white translate-x-5' : 'bg-black translate-x-0'}`}
+  ></div>
+</button>
       <motion.div
         className={`fixed inset-0 z-[-1] ${isDarkMode ? 'bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900' : 'bg-white'}`}
         animate={controls}
