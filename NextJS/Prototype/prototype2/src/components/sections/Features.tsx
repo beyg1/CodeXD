@@ -1,4 +1,4 @@
-import { Monitor, Shield, Zap, LineChart, CloudLightning, Code2 } from "lucide-react"
+import { Monitor, Shield, Zap, LineChart, CloudLightning, Code2 } from "lucide-react";
 
 export default function Features() {
   const features = [
@@ -32,27 +32,27 @@ export default function Features() {
       title: "API Access",
       description: "Robust API endpoints for custom integration and automation."
     }
-  ]
+  ];
 
   return (
-    <section className="relative overflow-hidden min-h-[600px] lg:min-h-screen flex flex-col ">
-<div className="container relative mx-auto flex-1 flex flex-col justify-center px-4 sm:px-6 mt-16">
-        <div className="text-center">
-          <h2 className="text-[#4237d9]  text-3xl font-bold  sm:text-4xl md:text-5xl">Agentic Features</h2>
+    <section className="relative overflow-hidden min-h-[800px] lg:min-h-screen flex flex-col ">
+     <div className="container relative mx-auto flex-1 flex flex-col justify-center">
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl">Agentic Features</h1>
           <p className="mt-4 md:text-xl">
-            Discover the cloud based solutions that make our AI services stand out
+            Discover the cloud-based solutions that make our AI services stand out
           </p>
         </div>
         <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => (
             <div key={feature.title} className="w-full md:w-auto p-4 md:p-6 bg-[#eff0f3] rounded-lg shadow-lg">
               <div className="mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+              <h3 className="text-xl text-black font-bold mb-2">{feature.title}</h3>
               <p className="text-[#232946]">{feature.description}</p>
             </div>
           ))}
         </div>
-      </div>
-    </section>    
+     </div>
+    </section>
   )
 }
