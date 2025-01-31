@@ -49,3 +49,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+.node {
+  background-color: #000000;
+}
+
+.line {
+  background-color: #000000;
+}

@@ -12,7 +12,7 @@ interface Node {
 }
 
 export default function NeuralBackground() {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+const [isDarkMode, setIsDarkMode] = useState(true);
   const containerRef = useRef<HTMLCanvasElement>(null);
   const nodesRef = useRef<Node[]>([]);
   const controls = useAnimation();
@@ -52,6 +52,7 @@ export default function NeuralBackground() {
   useEffect(() => {
     nodesRef.current = initializeNodes();
 
+    let animationInterval: NodeJS.Timeout;
     const animate = () => {
       if (!containerRef.current) return;
 
@@ -72,7 +73,13 @@ export default function NeuralBackground() {
         // Draw node
         ctx.beginPath();
         ctx.arc(node.x, node.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = hoveredNodeIndex.current === i ? `rgba(0, 0, 0, ${0.5 + 0.5 * Math.abs(Math.sin(animationTime.current / 1000))})` : isDarkMode ? 'rgba(147, 197, 253, 0.6)' : 'rgba(0, 0, 0, 0.6)';
+ctx.fillStyle = isDarkMode
+  ? hoveredNodeIndex.current === i
+    ? `rgba(255, 255, 255, ${0.5 + 0.5 * Math.abs(Math.sin(animationTime.current / 1000))})`
+    : 'rgba(255, 255, 255, 0.6)'
+  : hoveredNodeIndex.current === i
+  ? `rgba(0, 0, 0, ${0.5 + 0.5 * Math.abs(Math.sin(animationTime.current / 1000))})`
+  : 'rgba(0, 0, 0, 0.6)';
         ctx.fill();
 
         // Draw connections
@@ -81,7 +88,13 @@ export default function NeuralBackground() {
           ctx.beginPath();
           ctx.moveTo(node.x, node.y);
           ctx.lineTo(connectedNode.x, connectedNode.y);
-          ctx.strokeStyle = hoveredNodeIndex.current === i ? `rgba(0, 0, 0, ${0.5 + 0.5 * Math.abs(Math.sin(animationTime.current / 1000))})` : isDarkMode ? 'rgba(147, 197, 253, 0.2)' : 'rgba(64, 64, 64, 0.2)';
+ctx.strokeStyle = isDarkMode
+  ? hoveredNodeIndex.current === i
+    ? `rgba(255, 255, 255, ${0.5 + 0.5 * Math.abs(Math.sin(animationTime.current / 1000))})`
+    : 'rgba(255, 255, 255, 0.2)'
+  : hoveredNodeIndex.current === i
+  ? `rgba(0, 0, 0, ${0.5 + 0.5 * Math.abs(Math.sin(animationTime.current / 1000))})`
+  : 'rgba(0, 0, 0, 0.2)';
           ctx.lineWidth = 0.5;
           ctx.stroke();
         });
@@ -116,8 +129,9 @@ export default function NeuralBackground() {
       }
 
       animationTime.current += 16; // Update animation time based on frame rate
-      requestAnimationFrame(animate);
     };
+    // eslint-disable-next-line prefer-const
+    animationInterval = setInterval(animate, 16);
 
     const handleMouseMove = (event: MouseEvent) => {
       const rect = containerRef.current?.getBoundingClientRect();
@@ -155,7 +169,6 @@ export default function NeuralBackground() {
     handleResize();
     window.addEventListener('resize', handleResize);
     window.addEventListener('mousemove', handleMouseMove);
-    requestAnimationFrame(animate);
 
     controls.start({
       opacity: [0, 1],
@@ -163,6 +176,7 @@ export default function NeuralBackground() {
     });
 
     return () => {
+      clearInterval(animationInterval);
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
     };
@@ -172,7 +186,7 @@ export default function NeuralBackground() {
     <>
       <button
         className="absolute top-4 left-4 z-10 p-2 bg-white text-black rounded"
-        onClick={() => setIsDarkMode(!isDarkMode)}
+onClick={() => setIsDarkMode(!isDarkMode)}
       >
         Toggle Mode
       </button>
