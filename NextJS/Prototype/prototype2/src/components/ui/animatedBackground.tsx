@@ -1,5 +1,6 @@
 "use client";
-import { useEffect, useRef } from 'react';
+
+import { useEffect, useRef, useState } from 'react';
 import { motion, useAnimation, useMotionValue } from 'framer-motion';
 
 interface Node {
@@ -11,6 +12,7 @@ interface Node {
 }
 
 export default function NeuralBackground() {
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const containerRef = useRef<HTMLCanvasElement>(null);
   const nodesRef = useRef<Node[]>([]);
   const controls = useAnimation();
@@ -70,7 +72,7 @@ export default function NeuralBackground() {
         // Draw node
         ctx.beginPath();
         ctx.arc(node.x, node.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = hoveredNodeIndex.current === i ? `rgba(255, 255, 255, ${0.5 + 0.5 * Math.abs(Math.sin(animationTime.current / 1000))})` : 'rgba(147, 197, 253, 0.6)';
+        ctx.fillStyle = hoveredNodeIndex.current === i ? `rgba(0, 0, 0, ${0.5 + 0.5 * Math.abs(Math.sin(animationTime.current / 1000))})` : isDarkMode ? 'rgba(147, 197, 253, 0.6)' : 'rgba(0, 0, 0, 0.6)';
         ctx.fill();
 
         // Draw connections
@@ -79,7 +81,7 @@ export default function NeuralBackground() {
           ctx.beginPath();
           ctx.moveTo(node.x, node.y);
           ctx.lineTo(connectedNode.x, connectedNode.y);
-          ctx.strokeStyle = hoveredNodeIndex.current === i ? `rgba(255, 255, 255, ${0.5 + 0.5 * Math.abs(Math.sin(animationTime.current / 1000))})` : 'rgba(147, 197, 253, 0.2)';
+          ctx.strokeStyle = hoveredNodeIndex.current === i ? `rgba(0, 0, 0, ${0.5 + 0.5 * Math.abs(Math.sin(animationTime.current / 1000))})` : isDarkMode ? 'rgba(147, 197, 253, 0.2)' : 'rgba(64, 64, 64, 0.2)';
           ctx.lineWidth = 0.5;
           ctx.stroke();
         });
@@ -107,7 +109,7 @@ export default function NeuralBackground() {
           ctx.beginPath();
           ctx.moveTo(hoveredNode.x, hoveredNode.y);
           ctx.lineTo(nearestNode.x, nearestNode.y);
-          ctx.strokeStyle = `rgba(255, 255, 255, ${0.5 + 0.5 * Math.abs(Math.sin(animationTime.current / 1000))})`;
+          ctx.strokeStyle = `rgba(0, 0, 0, ${0.5 + 0.5 * Math.abs(Math.sin(animationTime.current / 1000))})`;
           ctx.lineWidth = 2 + 2 * Math.abs(Math.sin(animationTime.current / 1000));
           ctx.stroke();
         }
@@ -164,19 +166,27 @@ export default function NeuralBackground() {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
     };
-  }, [controls]);
+  }, [controls, isDarkMode]);
 
   return (
-    <motion.div
-      className="fixed inset-0 z-[-1] bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900"
-      animate={controls}
-      style={{ opacity }}
-    >
-      <canvas
-        ref={containerRef}
-        className="w-full h-full opacity-50 blur-[1px]"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-background/20" />
-    </motion.div>
+    <>
+      <button
+        className="absolute top-4 left-4 z-10 p-2 bg-white text-black rounded"
+        onClick={() => setIsDarkMode(!isDarkMode)}
+      >
+        Toggle Mode
+      </button>
+      <motion.div
+        className={`fixed inset-0 z-[-1] ${isDarkMode ? 'bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900' : 'bg-white'}`}
+        animate={controls}
+        style={{ opacity }}
+      >
+        <canvas
+          ref={containerRef}
+          className="w-full h-full opacity-50 blur-[1px]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-background/20" />
+      </motion.div>
+    </>
   );
 }
