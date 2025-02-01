@@ -18,7 +18,7 @@ export default function Hero() {
             Revolutionize Your Business with On-Demand AI Agents
             </span>
           </h1>
-          <p className="mx-auto mt-3 text-justify max-w-md text-sm sm:text-lg  md:max-w-3xl md:text-xl px-4">
+          <p className="mx-auto mt-3 text-ellipsis max-w-md text-sm sm:text-lg  md:max-w-3xl md:text-xl px-4">
           Agentify Precision, Speed, and Scalability with Agentia World&apos;s Vertical AI Agents.
           Whether you&apos;re in healthcare, logistics, finance, or beyond, our innovative agents transform operations instantly.
           </p>  
