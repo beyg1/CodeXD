@@ -36,7 +36,7 @@ export default function Features() {
 
   return (
     <section className="relative overflow-hidden min-h-[800px] lg:min-h-screen flex flex-col ">
-     <div className="container relative mx-auto flex-1 flex flex-col justify-center">
+     <div className="container relative mx-auto flex-1 flex flex-col justify-center px-4 mt-16 md:mt-24">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl">Agentic Features</h1>
           <p className="mt-4 md:text-xl">

@@ -35,7 +35,7 @@ const AIStatusIndicator = () => {
         <span className={styles.ping} />
         <span className={styles.dot} />
       </span>
-      <span className={styles.text}>AI Agents Activated</span>
+      <span className={styles.text}>AI Agents Active</span>
       <Cpu className={styles.icon} />
     </div>
   );
