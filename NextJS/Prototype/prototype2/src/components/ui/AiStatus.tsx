@@ -3,8 +3,8 @@ import { Cpu } from 'lucide-react';
 
 const styles = {
   container: `
-    fixed top-4 right-4 
-    flex items-center gap-2 
+    fixed top-4 right-4
+    hidden md:flex items-center gap-2 
     px-4 py-2 rounded-full 
     border border-blue-500/30 
     bg-[rgba(15,23,42,0.95)]
