@@ -31,7 +31,7 @@ export default function HeroCards() {
           
             <div className="relative grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 mx-auto"> 
               {HeroCards.map((feature) => (
-                <div key={feature.title} className="bg-[#eff0f3] rounded-lg  p-6 sm:p-8 transition-all hover:shadow-2xl flex flex-col items-center space-y-2">
+<div key={feature.title} className="bg-[#eff0f3] rounded-lg p-6 sm:p-8 transition-all transform hover:scale-105 hover:shadow-2xl flex flex-col items-center space-y-2">
                   <div>{feature.icon}</div>
                   <div className="relative w-full">
                     <h2 className="text-black sm:text-lg font-bold text-center">
