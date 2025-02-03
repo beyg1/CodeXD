@@ -14,11 +14,11 @@ export default function Home() {
       <NeuralBackground/>        
       <AIStatusIndicator/>
       <Hero />
-      {/* <Features />
+      <Features />
       <Services />
       <HowItWorks />
       <Testimonials />
-      <Footer /> */}
+      <Footer />
       <TerminalFeed />      
     </>
   );
