@@ -129,11 +129,10 @@ export default function DottedBackground() {
   return (
     <>
       {/* Global illuminating dotted background */}
-      <div className="absolute inset-0" style={backgroundStyle}></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#010012] to-[#1b2e55]" style={backgroundStyle}></div>
 
       {/* Canvas for individual glowing dots */}
       <canvas ref={canvasRef} className="absolute inset-0" />
     </>
   )
 }
-
