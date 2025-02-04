@@ -3,9 +3,19 @@ import Features from "@/components/sections/Features";
 
 export default function Home() {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">     
-      <Hero/>      
-      <Features/>
-    </section>  
+    <div className="snap-y snap-mandatory h-screen overflow-y-scroll">
+      <section className="snap-start h-screen w-screen flex items-center justify-center">
+        <Hero/>
+      </section>
+      <section className="snap-start h-screen w-screen flex items-center justify-center">
+        <Features/>
+      </section>
+      <section className="snap-start h-screen w-screen flex items-center justify-center">
+        <Hero/>
+      </section>
+      <section className="snap-start h-screen w-screen flex items-center justify-center">
+        <Features/>
+      </section>
+    </div>
   );
 }
