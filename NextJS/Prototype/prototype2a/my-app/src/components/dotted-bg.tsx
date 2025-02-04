@@ -57,7 +57,7 @@ export default function DottedBackground() {
 
       for (let x = 0; x < canvas.width; x += DOT_SPACING) {
         for (let y = 0; y < canvas.height; y += DOT_SPACING) {
-          const baseOpacity = 0.1 + globalIntensity * 0.3
+          const baseOpacity = 0.1 + Math.max(0, globalIntensity * 0.3 - 0.07);
           ctx.fillStyle = `rgba(255, 255, 255, ${baseOpacity})`
           ctx.beginPath()
           ctx.arc(x, y, 1, 0, Math.PI * 2)
@@ -120,7 +120,7 @@ export default function DottedBackground() {
 
   const backgroundStyle = {
     backgroundImage: `radial-gradient(
-      rgba(255, 255, 255, ${0.1 + globalGlowIntensity * 0.3}) 1px,
+      rgba(255, 255, 255, ${0.1 + Math.max(0, globalGlowIntensity * 0.2 - 0.07)}) 1px,
       transparent 1px
     )`,
     backgroundSize: `${DOT_SPACING}px ${DOT_SPACING}px`,
