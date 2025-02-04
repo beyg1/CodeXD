@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react"
 
 const DOT_SPACING = 20
 const GLOW_RADIUS = 11.34 // Approximately 0.3cm at 96 DPI
-const GLOW_DURATION = 1000 // 1 second for independently glowing dots
+const GLOW_DURATION = 2000 // 2 seconds
 const MIN_ACTIVE_GLOWS = 3
 const MAX_ACTIVE_GLOWS = 5
 
@@ -81,7 +81,7 @@ export default function DottedBackground() {
         const intensity = Math.sin(progress * Math.PI)
 
         const gradient = ctx.createRadialGradient(glow.x, glow.y, 0, glow.x, glow.y, GLOW_RADIUS)
-        gradient.addColorStop(0, `rgba(255, 255, 255, ${0.2 * intensity})`) //glowing intensity for independently glowing dots
+        gradient.addColorStop(0, `rgba(255, 255, 255, ${0.5 * intensity})`)
         gradient.addColorStop(1, "rgba(255, 255, 255, 0)")
 
         ctx.fillStyle = gradient
@@ -120,19 +120,20 @@ export default function DottedBackground() {
 
   const backgroundStyle = {
     backgroundImage: `radial-gradient(
-      rgba(255, 255, 255, ${0.1 + globalGlowIntensity * 0.1}) 1px,
+      rgba(255, 255, 255, ${0.1 + globalGlowIntensity * 0.3}) 1px,
       transparent 1px
     )`,
     backgroundSize: `${DOT_SPACING}px ${DOT_SPACING}px`,
   }
 
   return (
-    <>
+    <div className="fixed inset-0 bg-gradient-to-r from-[#010012] to-[#1b2e55]">
       {/* Global illuminating dotted background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#010012] to-[#1b2e55]" style={backgroundStyle}></div>
+      <div className="absolute inset-0" style={backgroundStyle}></div>
 
       {/* Canvas for individual glowing dots */}
       <canvas ref={canvasRef} className="absolute inset-0" />
-    </>
+    </div>
   )
 }
+
