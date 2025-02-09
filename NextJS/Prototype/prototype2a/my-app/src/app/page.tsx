@@ -7,21 +7,21 @@ import Navbar from "@/components/sections/Navbar";
 
 export default function Home() {
   return (
-    <div className="snap-y snap-mandatory h-screen overflow-y-scroll">
+<div>
       <Navbar/>
-      <section className="snap-start h-screen w-screen flex items-center justify-center">
+<section>
         <Hero/>
       </section>
-      <section className="snap-start h-screen w-screen flex items-center justify-center">
+<section>
         <Features/>
       </section>
-      <section className="snap-start h-screen w-screen flex items-center justify-center">
+<section>
         <HowItWorks/>
       </section>
-      <section className="snap-start h-screen w-screen flex items-center justify-center">
+<section>
         <Testimonials/>
       </section>
-      <section className="snap-start h-screen w-screen flex items-center justify-center">
+<section>
         <Footer/>
       </section>
     </div>
