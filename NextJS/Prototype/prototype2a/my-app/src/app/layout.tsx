@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import DottedBackground from "../components/dotted-bg"
+import DottedBackground from "../components/ui/dotted-bg"
 import type React from "react" // Added import for React
 
 const geistSans = Geist({

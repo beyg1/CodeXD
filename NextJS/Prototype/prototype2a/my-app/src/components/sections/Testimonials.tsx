@@ -1,4 +1,4 @@
-import { Avatar, AvatarImage } from "../"
+import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import { Card, CardContent } from "@/components/ui/card"
 import { Star } from "lucide-react"
 
