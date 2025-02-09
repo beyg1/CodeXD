@@ -1,6 +1,6 @@
 import type React from "react"
 import { Button } from "../ui/button"
-import { Store, User, Settings, HelpCircle,  } from "lucide-react"
+import { Store, ArrowRightToLine, BotMessageSquare  } from "lucide-react"
 
 const CylindricalNavbar: React.FC = () => {
   return (
@@ -9,16 +9,12 @@ const CylindricalNavbar: React.FC = () => {
         <Store className="mr-1" /> Agentia World
       </Button>
       <div className="flex space-x-2">
-        {[User, Settings, HelpCircle].map((Icon, index) => (
-          <Button
-            key={index}
-            variant="ghost"
-            size="icon"
-            className="text-white/90 hover:text-white hover:bg-white/5transition-colors"
-          >
-            <Icon className="h-4 w-4" />
-          </Button>
-        ))}
+        <Button variant="ghost" className="text-white/90  hover:bg-white/5 transition-colors">
+          <BotMessageSquare className="mr-1" /> Agents
+        </Button>
+        <Button variant="ghost" className="text-white/90  hover:bg-white/5 transition-colors">
+          <ArrowRightToLine className="mr-1" /> Get Started
+        </Button>        
       </div>
     </nav>
   )
