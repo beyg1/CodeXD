@@ -10,7 +10,7 @@ export default function Hero() {
           Agentify Precision, Speed, and Scalability with Agentia World&#39;s Vertical AI Agents.
           Whether you&#39;re in healthcare, logistics, finance, or beyond, our innovative agents transform operations instantly.
         </h2>        
-        <ButtonPrimary className="mt-12"> 
+        <ButtonPrimary className="mt-12" href="https://www.youtube.com/watch?v=9PoGWIK9DmE" target="_blank">
           See Demo
         </ButtonPrimary>        
       </div>
