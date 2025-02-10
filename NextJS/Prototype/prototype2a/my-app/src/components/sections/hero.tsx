@@ -9,12 +9,10 @@ export default function Hero() {
         <h2 className="mt-8 text-white text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium max-w-2xl">
           Agentify Precision, Speed, and Scalability with Agentia World&#39;s Vertical AI Agents.
           Whether you&#39;re in healthcare, logistics, finance, or beyond, our innovative agents transform operations instantly.
-        </h2>
-        <div className="mt-4">
-        <ButtonPrimary > 
+        </h2>        
+        <ButtonPrimary className="mt-12"> 
           See Demo
-        </ButtonPrimary>
-        </div>
+        </ButtonPrimary>        
       </div>
     </section>
   );

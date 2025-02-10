@@ -14,7 +14,7 @@ const CylindricalNavbar: React.FC = () => {
 </Button>
       <div className="flex space-x-2">
         <Button variant="ghost" className="text-white/90  hover:bg-white/5 transition-colors">
-          <BotMessageSquare className="mr-1 text-red-500" /> Agents
+          <BotMessageSquare className="mr-1 text-indigo-800" /> Agents
         </Button>
         <Button variant="ghost" className="text-white/90  hover:bg-white/5 transition-colors">
           <ArrowRightToLine className="mr-1 text-green-400" /> Get Started
