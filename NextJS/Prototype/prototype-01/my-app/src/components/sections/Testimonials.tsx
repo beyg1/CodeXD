@@ -5,7 +5,7 @@ const testimonials = [
   {
     name: "Tom Preston",
     role: "CEO, Co-Founder Github// Early investor in Langbase",
-    content: "'If I were building Github for software of today with LLMs, Langbase is what it would look like.' --Testimonials like these from developers/Founders ",
+    content: "If I were building Github for software of today with LLMs, Langbase is what it would look like. --Testimonials like these from developers/Founders ",
     rating: 5,
     avatar: "/test1.webp"
   },

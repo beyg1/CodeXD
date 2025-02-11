@@ -1,4 +1,4 @@
-import { Monitor, Shield, Zap, LineChart, CloudLightning, Code2, MessageSquare, FolderCode } from "lucide-react";
+import { Monitor, Zap, CloudLightning, Code2, MessageSquare, FolderCode } from "lucide-react";
 
 export default function Features() {
   const features = [
