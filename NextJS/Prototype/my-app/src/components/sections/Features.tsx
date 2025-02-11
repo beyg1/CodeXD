@@ -41,7 +41,7 @@ export default function Features() {
         <div className="text-center mb-8">
           <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">Agentic <span className="text-red-600">Features</span></h1>
           <p className="mt-8 text-white sm:text-xl md:text-2xl lg:text-3xl font-medium mb-8">
-            Discover the cloud-based solutions that make our AI services stand out
+            Discover the Agentic Features your WorkFlow is missing
           </p>
         </div>
         <div className="relative grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3 px-4 sm:px-6">

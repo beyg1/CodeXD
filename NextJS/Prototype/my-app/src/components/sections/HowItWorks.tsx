@@ -30,7 +30,7 @@ export default function HowItWorks() {
         <div className="text-center">
           <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">How It <span className="text-red-600">Works</span></h1>
           <p className="mt-8 text-white sm:text-xl md:text-2xl lg:text-3xl font-medium mb-10">
-            Our proven process for delivering successful AI solutions
+            Get familiar with our carefully curated open-source AI Agents library and start integrating AI into your workflows today.
           </p>
         </div>
         <div className="grid gap-6 md:gap-8  md:grid-cols-2 lg:grid-cols-4">
