@@ -5,22 +5,22 @@ export default function HowItWorks() {
     {
       icon: <Search className="w-12 h-12 text-violet-600" />,
       title: "1. Analyze",
-      description: "We analyze your business needs and identify opportunities for AI integration."
+      description: "Analyze opensource AI Agents library and identify opportunities for AI integration."
     },
     {
       icon: <FileCode className="w-12 h-12 text-amber-500" />,
-      title: "2. Develop",
-      description: "Our experts develop customized AI solutions tailored to your requirements."
+      title: "2. Shortlist",
+      description: "Shortlist the Agents best suited for your custom Workflow or simply hire the developer of your choice."
     },
     {
       icon: <Settings className="w-12 h-12 text-lime-600" />,
       title: "3. Implement",
-      description: "We implement the solution seamlessly into your existing systems."
+      description: "Implement the AI solution seamlessly into your existing systems."
     },
     {
       icon: <CheckCircle className="w-12 h-12 text-orange-500" />,
       title: "4. Monitor",
-      description: "Continuous monitoring and optimization to ensure optimal performance."
+      description: "Let Agents continuously monitor, reason and optimize performance."
     }
   ]
 
@@ -50,7 +50,7 @@ export default function HowItWorks() {
             </div>
           ))}
         </div>
-        <div className="mt-12 flex-1">
+        <div className="mt-12 ">
           <AIWorkflow />
         </div>
       </div>
