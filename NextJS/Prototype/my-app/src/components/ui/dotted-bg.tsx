@@ -58,8 +58,8 @@ export default function DottedBackground() {
 
       for (let x = 0; x < canvas.width; x += DOT_SPACING) {
         for (let y = 0; y < canvas.height; y += DOT_SPACING) {
-          // Set dot color based on theme
-          const dotColor = isDarkMode ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.1)"
+          // Use dark mode dot color for both themes
+          const dotColor = "rgba(255, 255, 255, 0.1)"
           ctx.fillStyle = dotColor
           ctx.beginPath()
           ctx.arc(x, y, 1, 0, Math.PI * 2)
@@ -81,8 +81,8 @@ export default function DottedBackground() {
         }
 
         const intensity = Math.sin(progress * Math.PI)
-        // Set glow color based on theme
-        const glowColor = isDarkMode ? "255, 255, 255" : "0, 0, 0"
+        // Always use dark mode glow color
+        const glowColor = "255, 255, 255"
         const gradient = ctx.createRadialGradient(glow.x, glow.y, 0, glow.x, glow.y, GLOW_RADIUS)
         gradient.addColorStop(0, `rgba(${glowColor}, ${0.3 * intensity})`)
         gradient.addColorStop(1, `rgba(${glowColor}, 0)`)
@@ -124,9 +124,10 @@ export default function DottedBackground() {
     backgroundSize: `${DOT_SPACING}px ${DOT_SPACING}px`,
   }
 
+  // Updated lightModeBackgroundStyle to match dark mode dots
   const lightModeBackgroundStyle = {
     backgroundImage: `radial-gradient(
-      rgba(0, 0, 0, 0.1) 1px,
+      rgba(255, 255, 255, 0.1) 1px,
       transparent 1px
     )`,
     backgroundSize: `${DOT_SPACING}px ${DOT_SPACING}px`,
