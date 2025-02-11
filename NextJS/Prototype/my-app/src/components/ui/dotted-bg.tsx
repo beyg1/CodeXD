@@ -5,7 +5,7 @@ import { useTheme } from "./ThemeContext"
 
 const DOT_SPACING = 20
 const GLOW_RADIUS = 11.34 // Approximately 0.3cm at 96 DPI
-const GLOW_DURATION = 2000 // 2 seconds
+const GLOW_DURATION = 1000 // 2 seconds
 const MIN_ACTIVE_GLOWS = 3
 const MAX_ACTIVE_GLOWS = 5
 
