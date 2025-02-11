@@ -38,8 +38,8 @@ export default function Features() {
     <section className="relative overflow-hidden min-h-[800px] lg:min-h-screen flex flex-col ">
      <div className="container relative mx-auto flex-1 flex flex-col justify-center px-4 mt-16 md:mt-24">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl">Agentic Features</h1>
-          <p className="mt-4 md:text-xl">
+          <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">Agentic <span className="text-red-600">Features</span></h1>
+          <p className="mt-8 text-white sm:text-xl md:text-2xl lg:text-3xl font-medium mb-8">
             Discover the cloud-based solutions that make our AI services stand out
           </p>
         </div>

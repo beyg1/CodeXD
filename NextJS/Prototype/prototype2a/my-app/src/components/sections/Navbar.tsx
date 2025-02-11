@@ -8,9 +8,9 @@ const CylindricalNavbar: React.FC = () => {
 <nav className="fixed top-4 left-0 right-0 w-auto z-50 p-4 md:mx-20 flex justify-between items-center rounded-full bg-gradient-to-r from-white/10 to-white/30 backdrop-blur-sm backdrop-hue-rotate-0  shadow-2xl md:left-0 md:right-0 md:justify-between">
 <Button variant="ghost" className="text-white/90 hover:bg-white/5 transition-colors">
   <Store className="mr-1 text-orange-400" />
-  <span className="text-red-600 font-serif text-xl">
+  <span className="text-white-600 font-serif text-xl">
     Agentia
-  <span className="text-white font-serif text-xl">World</span>
+  <span className="text-red-600 font-serif text-xl">World</span>
   </span>
 </Button>
       <div className="flex space-x-2 md:hidden">
