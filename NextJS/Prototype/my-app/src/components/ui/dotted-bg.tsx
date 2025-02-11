@@ -5,7 +5,7 @@ import { useTheme } from "./ThemeContext"
 
 const DOT_SPACING = 20
 const GLOW_RADIUS = 11.34 // Approximately 0.3cm at 96 DPI
-const GLOW_DURATION = 1000 // 2 seconds
+const GLOW_DURATION = 2000 // 2 seconds
 const MIN_ACTIVE_GLOWS = 3
 const MAX_ACTIVE_GLOWS = 5
 
@@ -137,7 +137,7 @@ export default function DottedBackground() {
     <div 
       className={isDarkMode 
         ? "fixed inset-0 bg-gradient-to-r from-[#010012] to-[#1b2e55]" 
-        : "fixed inset-0 bg-gradient-to-r from-[#271c19] to-[#55423d]"
+        : "fixed inset-0 bg-gradient-to-r from-[#2c2727] to-[#404247]"
       }
     >
       <div 
