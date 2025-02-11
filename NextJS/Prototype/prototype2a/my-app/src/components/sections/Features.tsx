@@ -46,10 +46,10 @@ export default function Features() {
         </div>
         <div className="relative grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3 px-4 sm:px-6">
           {features.map((feature) => (
-            <div key={feature.title} className="w-full md:w-auto p-4 md:p-6 bg-[#eff0f3] rounded-lg shadow-lg">
+            <div key={feature.title} className="w-full md:w-auto p-4 md:p-6 border-2 border-transparent bg-white bg-opacity-20 backdrop-blur-sm  shadow-2xl hover:animate-pulse font-medium hover:bg-transparent hover:border-white hover:border-2 rounded-lg ">
               <div className="mb-4">{feature.icon}</div>
-              <h3 className="text-xl text-black font-bold mb-2">{feature.title}</h3>
-              <p className="text-[#232946]">{feature.description}</p>
+              <h3 className="text-xl text-white font-mono mb-2">{feature.title}</h3>
+              <p className="text-white font-light">{feature.description}</p>
             </div>
           ))}
         </div>
