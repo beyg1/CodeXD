@@ -136,7 +136,7 @@ export default function DottedBackground() {
     <div 
       className={isDarkMode 
         ? "fixed inset-0 bg-gradient-to-r from-[#010012] to-[#1b2e55]" 
-        : "fixed inset-0 bg-gradient-to-r from-[#55423d] to-[#49342f]"
+        : "fixed inset-0 bg-gradient-to-r from-[#078080] to-[#f45d48]"
       }
     >
       <div 
