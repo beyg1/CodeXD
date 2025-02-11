@@ -24,46 +24,46 @@ const initialNodes: Node[] = [
     style: { backgroundColor: 'rgba(24,24,27,0.5)', color: 'white' },
   },
   {
-    id: 'sap',
+    id: 'zapier',
     position: { x: 500, y: 20 },
-    data: { label: 'SAP' },
+    data: { label: 'Zapier' },
     className: getNodeClassName('dark:bg-gray-800 rounded-full px-2 py-1 sm:px-4 sm:py-2'),
     style: { backgroundColor: 'rgba(24,24,27,0.5)', color: 'white' },
   },
   {
-    id: 'zendesk',
+    id: 'slack',
     position: { x: 700, y: 20 },
-    data: { label: 'Zendesk' },
+    data: { label: 'Slack' },
     className: getNodeClassName('dark:bg-gray-800 rounded-full px-2 py-1 sm:px-4 sm:py-2'),
     style: { backgroundColor: 'rgba(24,24,27,0.5)', color: 'white' },
   },
   
   // Core Process Nodes
   {
-    id: 'memory',
+    id: 'agent',
     position: { x: 500, y: 170 },
-    data: { label: 'Memory' },
+    data: { label: 'Agent' },
     className: getNodeClassName('dark:bg-gray-700 rounded-lg px-3 py-2 sm:px-6 sm:py-3'),
     style: { backgroundColor: 'rgba(24,24,27,0.5)', color: 'white' },
   },
   {
-    id: 'planStep',
+    id: 'llm1',
     position: { x: 350, y: 320 },
-    data: { label: 'Plan Step' },
+    data: { label: 'LLM Call 1' },
     className: getNodeClassName('dark:bg-gray-700 rounded-lg px-3 py-2 sm:px-6 sm:py-3'),
     style: { backgroundColor: 'rgba(24,24,27,0.5)', color: 'white' },
   },
   {
-    id: 'executeStep',
+    id: 'llm2',
     position: { x: 650, y: 320 },
-    data: { label: 'Execute Step' },
+    data: { label: 'LLM Call 2' },
     className: getNodeClassName('dark:bg-gray-700 rounded-lg px-3 py-2 sm:px-6 sm:py-3'),
     style: { backgroundColor: 'rgba(24,24,27,0.5)', color: 'white' },
   },
   {
-    id: 'planTask',
+    id: 'execTask',
     position: { x: 500, y: 470 },
-    data: { label: 'Plan Task' },
+    data: { label: 'Execute Task' },
     className: getNodeClassName('dark:bg-gray-700 rounded-lg px-3 py-2 sm:px-6 sm:py-3'),
     style: { backgroundColor: 'rgba(24,24,27,0.5)', color: 'white' },
   },
@@ -77,7 +77,7 @@ const initialNodes: Node[] = [
   {
     id: 'appTrigger',
     position: { x: 850, y: 320 },
-    data: { label: 'App/Trigger/SDK' },
+    data: { label: 'Trigger Task' },
     className: getNodeClassName('bg-white dark:bg-gray-900 rounded-lg px-3 py-2 sm:px-6 sm:py-3'),
     style: { backgroundColor: 'rgba(24,24,27,0.5)', color: 'white' },
   },
@@ -91,16 +91,16 @@ const initialNodes: Node[] = [
     style: { backgroundColor: 'rgba(24,24,27,0.5)', color: 'white' },
   },
   {
-    id: 'gmail',
+    id: 'workato',
     position: { x: 500, y: 620 },
-    data: { label: 'Gmail' },
+    data: { label: 'Workato' },
     className: getNodeClassName('dark:bg-gray-800 rounded-full px-2 py-1 sm:px-4 sm:py-2'),
     style: { backgroundColor: 'rgba(24,24,27,0.5)', color: 'white' },
   },
   {
-    id: 'freshdesk',
+    id: 'uipath',
     position: { x: 700, y: 620 },
-    data: { label: 'Freshdesk' },
+    data: { label: 'UiPath' },
     className: getNodeClassName('dark:bg-gray-800 rounded-full px-2 py-1 sm:px-4 sm:py-2'),
     style: { backgroundColor: 'rgba(24,24,27,0.5)', color: 'white' },
   },
@@ -108,28 +108,28 @@ const initialNodes: Node[] = [
 
 const initialEdges: Edge[] = [
   // Top connections
-  { id: 'notion-memory', source: 'notion', target: 'memory', animated: true, type: 'smoothstep' },
-  { id: 'sap-memory', source: 'sap', target: 'memory', animated: true, type: 'smoothstep' },
-  { id: 'zendesk-memory', source: 'zendesk', target: 'memory', animated: true, type: 'smoothstep' },
+  { id: 'notion-agent', source: 'notion', target: 'agent', animated: true, type: 'smoothstep' },
+  { id: 'zapier-agent', source: 'zapier', target: 'agent', animated: true, type: 'smoothstep' },
+  { id: 'slack-agent', source: 'slack', target: 'agent', animated: true, type: 'smoothstep' },
   
   // Core process connections
-  { id: 'memory-planStep', source: 'memory', target: 'planStep', animated: true, type: 'smoothstep',  className: 'text-xs sm:text-sm' },
-  { id: 'planStep-executeStep', source: 'planStep', target: 'executeStep', animated: true, type: 'smoothstep',  className: 'text-xs sm:text-sm' },
-  { id: 'executeStep-memory', source: 'executeStep', target: 'memory', animated: true, type: 'smoothstep',  className: 'text-xs sm:text-sm' },
-  { id: 'tools-planStep', source: 'tools', target: 'planStep', animated: true, type: 'smoothstep', className: 'text-xs sm:text-sm' },
-  { id: 'executeStep-appTrigger', source: 'executeStep', target: 'appTrigger', animated: true, type: 'smoothstep',  className: 'text-xs sm:text-sm' },
-  { id: 'planTask-planStep', source: 'planTask', target: 'planStep', animated: true, type: 'smoothstep', className: 'text-xs sm:text-sm' },
-  { id: 'appTrigger-planTask', source: 'appTrigger', target: 'planTask', animated: true, type: 'smoothstep', className: 'text-xs sm:text-sm' },
+  { id: 'agent-llm1', source: 'agent', target: 'llm1', animated: true, type: 'smoothstep',  className: 'text-xs sm:text-sm' },
+  { id: 'llm1-llm2', source: 'llm1', target: 'llm2', animated: true, type: 'smoothstep',  className: 'text-xs sm:text-sm' },
+  { id: 'llm2-agent', source: 'llm2', target: 'agent', animated: true, type: 'smoothstep',  className: 'text-xs sm:text-sm' },
+  { id: 'tools-llm1', source: 'tools', target: 'llm1', animated: true, type: 'smoothstep', className: 'text-xs sm:text-sm' },  
+  { id: 'llm2-appTrigger', source: 'llm2', target: 'appTrigger', animated: true, type: 'smoothstep',  className: 'text-xs sm:text-sm' },
+  { id: 'execTask-planStep', source: 'execTask', target: 'planStep', animated: true, type: 'smoothstep', className: 'text-xs sm:text-sm' },
+  { id: 'appTrigger-execTask', source: 'appTrigger', target: 'execTask', animated: true, type: 'smoothstep', className: 'text-xs sm:text-sm' },
   
   // Bottom connections
-  { id: 'planTask-airtable', source: 'planTask', target: 'airtable', animated: true, type: 'smoothstep' },
-  { id: 'planTask-gmail', source: 'planTask', target: 'gmail', animated: true, type: 'smoothstep' },
-  { id: 'planTask-freshdesk', source: 'planTask', target: 'freshdesk', animated: true, type: 'smoothstep' },
+  { id: 'execTask-airtable', source: 'execTask', target: 'airtable', animated: true, type: 'smoothstep' },
+  { id: 'execTask-workato', source: 'execTask', target: 'workato', animated: true, type: 'smoothstep' },
+  { id: 'execTask-uipath', source: 'execTask', target: 'uipath', animated: true, type: 'smoothstep' },
 ];
 
-export default function AIWorkflowSection() {
+export default function AIWorkflow() {
   return (
-    <Card className="w-full h-screen p-3 sm:p-6 bg-gradient-to-b from-black via-black to-purple-900">      
+    <div className="w-full h-screen">      
       <div className="w-full h-[calc(100%-100px)] sm:h-[calc(100%-120px)] flex items-center justify-center">
         <div className="w-full sm:w-[1000px] h-[500px] sm:h-[700px]">
           <ReactFlow
@@ -142,17 +142,16 @@ export default function AIWorkflowSection() {
             zoomOnScroll={false}
             panOnScroll={false}
             panOnDrag={false} 
-            preventScrolling={true}
+            preventScrolling={false}
             className="bg-transparent"
             fitView
             minZoom={0.2}
             maxZoom={1}
             proOptions={{ hideAttribution: true }}
           >
-           
           </ReactFlow>
         </div>
       </div>
-    </Card>
+    </div>
   );
 }
