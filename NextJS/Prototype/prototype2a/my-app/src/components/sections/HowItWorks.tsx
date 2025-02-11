@@ -1,5 +1,5 @@
 import { Search, FileCode, Settings, CheckCircle } from "lucide-react"
-
+import AIWorkflowSection from "../ui/workflow"
 export default function HowItWorks() {
   const steps = [
     {
@@ -50,6 +50,9 @@ export default function HowItWorks() {
             </div>
           ))}
         </div>
+         <div className="mt-12">
+         <AIWorkflowSection />
+         </div>
       </div>
     </section>
   )

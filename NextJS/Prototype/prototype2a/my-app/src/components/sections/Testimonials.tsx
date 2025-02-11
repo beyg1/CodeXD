@@ -4,23 +4,23 @@ import { Star } from "lucide-react"
 
 const testimonials = [
   {
-    name: "John Smith",
-    role: "CTO, TechCorp",
-    content: "Agentia's vertical AI solutions have transformed our business operations. The results exceeded our expectations.",
+    name: "Tom Preston",
+    role: "CEO, Co-Founder Github// Early investor in Langbase",
+    content: "'If I were building Github for software of today with LLMs, Langbase is what it would look like.' --Testimonials like these from developers/Founders ",
     rating: 5,
     avatar: "/test1.webp"
   },
   {
-    name: "Lisa Chen",
-    role: "CEO, StartupX",
-    content: "Working with Agentia was a game-changer. Their AI expertise helped us scale efficiently. Sometimes I wonder how we managed without them.",
+    name: "Iddo Gino",
+    role: "Founder . RapidAI",
+    content: "No one does it like Ahmad. Been playing with Langbase recently and if you want to get cooking with AI, this is it. 10/10 platform, 100/10 landing page.",
     rating: 5,
     avatar: "/test3.webp"
   },
   {
-    name: "Mike Johnson",
-    role: "Director, InnovateNow",
-    content: "The team at Agentia delivers exceptional results. Their AI solutions are cutting-edge, cloud based and chat user interface is amazing.",
+    name: "Logan Kilpatrick",
+    role: "Google · OpenAI · Harvard",
+    content: "Ahmad is uniquely positioned to dramatically improve the AI developer experience. He has done exactly that with Langbase, building on his deep expertise creating products for developers",
     rating: 5,
     avatar: "/test2.webp"
   }
@@ -33,14 +33,14 @@ export default function Testimonials() {
         <div className="text-center">
           <h2 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold tracking-tight leading-tight">Perspectives from <span className="text-red-600">Experts</span></h2>
           <p className="mt-8 text-white sm:text-xl md:text-2xl lg:text-3xl font-medium mb-8">
-            See what AI Founders and Market Leaders have to say about Agentia<span className="text-red-600">World</span>.
+            See what AI Founders and Market Leaders have to say about Agentia<span className="text-red-600">World</span>. <span className="mt-4 text-xl text-red-500"> Disclamer - These are real testimonials from Langbase.com a Ai startup found by Ahmed Awais. I believe testimonials like these from Sir Zia's Students from Prestigious IT background can help the landing page.</span>
           </p>
         </div>
         <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <div key={index}>
               <Card>
-                <CardContent className="p-4 md:p-6 bg-[#eff0f3]">
+                <CardContent className="p-4 md:p-12 bg-[#eff0f3]">
                   <div className="flex mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
