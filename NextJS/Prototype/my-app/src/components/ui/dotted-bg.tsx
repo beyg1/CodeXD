@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useTheme } from "./ThemeContext"
 
 const DOT_SPACING = 20
@@ -18,6 +18,7 @@ interface Glow {
 export default function DottedBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const { isDarkMode } = useTheme()
+  const [globalGlowIntensity, setGlobalGlowIntensity] = useState(0)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -51,16 +52,15 @@ export default function DottedBackground() {
       addGlow()
     }
 
-    const drawDots = () => {
+    const drawDots = (globalIntensity: number) => {
       if (!ctx) return
 
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
       for (let x = 0; x < canvas.width; x += DOT_SPACING) {
         for (let y = 0; y < canvas.height; y += DOT_SPACING) {
-          // Use dark mode dot color for both themes
-          const dotColor = "rgba(255, 255, 255, 0.1)"
-          ctx.fillStyle = dotColor
+          const baseOpacity = 0.05 + globalIntensity * 0.1
+          ctx.fillStyle = `rgba(255, 255, 255, ${baseOpacity})`
           ctx.beginPath()
           ctx.arc(x, y, 1, 0, Math.PI * 2)
           ctx.fill()
@@ -81,11 +81,10 @@ export default function DottedBackground() {
         }
 
         const intensity = Math.sin(progress * Math.PI)
-        // Always use dark mode glow color
-        const glowColor = "255, 255, 255"
+
         const gradient = ctx.createRadialGradient(glow.x, glow.y, 0, glow.x, glow.y, GLOW_RADIUS)
-        gradient.addColorStop(0, `rgba(${glowColor}, ${0.3 * intensity})`)
-        gradient.addColorStop(1, `rgba(${glowColor}, 0)`)
+        gradient.addColorStop(0, `rgba(255, 255, 255, ${0.5 * intensity})`)
+        gradient.addColorStop(1, "rgba(255, 255, 255, 0)")
 
         ctx.fillStyle = gradient
         ctx.beginPath()
@@ -95,13 +94,18 @@ export default function DottedBackground() {
     }
 
     const animate = (currentTime: number) => {
-      drawDots()
+      const globalIntensity = (Math.sin(currentTime / 2000) + 1) / 2
+      setGlobalGlowIntensity(globalIntensity)
+
+      drawDots(globalIntensity)
       drawGlows(currentTime)
 
+      // Ensure at least MIN_ACTIVE_GLOWS are always present
       while (glows.length < MIN_ACTIVE_GLOWS) {
         addGlow()
       }
 
+      // Randomly add more glows up to MAX_ACTIVE_GLOWS
       if (glows.length < MAX_ACTIVE_GLOWS && Math.random() < 0.02) {
         addGlow()
       }
@@ -114,20 +118,20 @@ export default function DottedBackground() {
     return () => {
       window.removeEventListener("resize", resizeCanvas)
     }
-  }, [isDarkMode]) // Add isDarkMode as dependency
+  }, [isDarkMode])
 
   const darkModeBackgroundStyle = {
     backgroundImage: `radial-gradient(
-      rgba(255, 255, 255, 0.1) 1px,
+      rgba(255, 255, 255, ${0.05 + globalGlowIntensity * 0.1}) 1px,
       transparent 1px
     )`,
     backgroundSize: `${DOT_SPACING}px ${DOT_SPACING}px`,
   }
 
-  // Updated lightModeBackgroundStyle to match dark mode dots
+  // Updated light mode background style to use white dots instead of black ones
   const lightModeBackgroundStyle = {
     backgroundImage: `radial-gradient(
-      rgba(255, 255, 255, 0.1) 1px,
+      rgba(255, 255, 255, ${0.05 + globalGlowIntensity * 0.1}) 1px,
       transparent 1px
     )`,
     backgroundSize: `${DOT_SPACING}px ${DOT_SPACING}px`,
@@ -140,10 +144,10 @@ export default function DottedBackground() {
         : "fixed inset-0 bg-gradient-to-r from-[#2c2727] to-[#404247]"
       }
     >
-      <div 
-        className="absolute inset-0" 
-        style={isDarkMode ? darkModeBackgroundStyle : lightModeBackgroundStyle}
-      />
+      {/* Global illuminating dotted background */}
+      <div className="absolute inset-0" style={isDarkMode ? darkModeBackgroundStyle : lightModeBackgroundStyle}></div>
+
+      {/* Canvas for individual glowing dots */}
       <canvas ref={canvasRef} className="absolute inset-0" />
     </div>
   )
