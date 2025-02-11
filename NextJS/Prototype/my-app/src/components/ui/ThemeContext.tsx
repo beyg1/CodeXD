@@ -19,7 +19,7 @@ function getInitialTheme(): boolean {
       }
       // Default to dark mode instead of checking system preference
       return true;
-    } catch (err) {
+    } catch  {
       return true; // Default to dark mode if there's an error
     }
   }
