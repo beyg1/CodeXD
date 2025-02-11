@@ -1,8 +1,10 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ThemeProvider } from "@/components/ui/ThemeContext";
+import { metadata } from "./metadata";
 import "./globals.css";
-import DottedBackground from "../components/ui/dotted-bg"
-import type React from "react" // Added import for React
+import DottedBackground from "../components/ui/dotted-bg";
+import type React from "react";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,23 +16,36 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Agentia World",
-  description: "AI Agents as a Service",
-};
+export { metadata };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <Script id="theme-script" strategy="beforeInteractive">
+          {`
+            try {
+              const savedTheme = localStorage.getItem('theme');
+              const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+              const theme = savedTheme ? savedTheme : prefersDark ? 'dark' : 'light';
+              if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+              }
+            } catch (e) {}
+          `}
+        </Script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <DottedBackground />
-        {children}
+        <ThemeProvider>
+          <DottedBackground />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
