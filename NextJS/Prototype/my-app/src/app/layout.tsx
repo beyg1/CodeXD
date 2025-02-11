@@ -24,17 +24,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="dark">
       <head>
         <Script id="theme-script" strategy="beforeInteractive">
           {`
             try {
-              const savedTheme = localStorage.getItem('theme');
-              const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-              const theme = savedTheme ? savedTheme : prefersDark ? 'dark' : 'light';
-              if (theme === 'dark') {
-                document.documentElement.classList.add('dark');
-              }
+              // Always set dark mode on page load/refresh
+              document.documentElement.classList.add('dark');
+              localStorage.setItem('theme', 'dark');
             } catch (e) {}
           `}
         </Script>

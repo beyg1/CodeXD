@@ -17,8 +17,8 @@ function getInitialTheme(): boolean {
       if (storedTheme) {
         return storedTheme === 'dark';
       }
-      // Check system preference
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      // Default to dark mode instead of checking system preference
+      return true;
     } catch (err) {
       return true; // Default to dark mode if there's an error
     }
