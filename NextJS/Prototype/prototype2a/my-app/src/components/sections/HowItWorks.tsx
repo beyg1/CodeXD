@@ -3,22 +3,22 @@ import AIWorkflow from "../ui/aiworkflow"
 export default function HowItWorks() {
   const steps = [
     {
-      icon: <Search className="w-12 h-12 text-[#d9376e]" />,
+      icon: <Search className="w-12 h-12 text-violet-600" />,
       title: "1. Analyze",
       description: "We analyze your business needs and identify opportunities for AI integration."
     },
     {
-      icon: <FileCode className="w-12 h-12 text-[#d9376e]" />,
+      icon: <FileCode className="w-12 h-12 text-amber-500" />,
       title: "2. Develop",
       description: "Our experts develop customized AI solutions tailored to your requirements."
     },
     {
-      icon: <Settings className="w-12 h-12 text-[#d9376e]" />,
+      icon: <Settings className="w-12 h-12 text-lime-600" />,
       title: "3. Implement",
       description: "We implement the solution seamlessly into your existing systems."
     },
     {
-      icon: <CheckCircle className="w-12 h-12 text-[#d9376e]" />,
+      icon: <CheckCircle className="w-12 h-12 text-orange-500" />,
       title: "4. Monitor",
       description: "Continuous monitoring and optimization to ensure optimal performance."
     }
@@ -37,7 +37,7 @@ export default function HowItWorks() {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="relative p-4 md:p-6 bg-[#eff0f3] rounded-lg shadow-lg"
+              className="relative p-4 md:p-6  border-2 border-transparent bg-white bg-opacity-20 backdrop-blur-sm  shadow-2xl hover:animate-pulse font-medium hover:bg-transparent hover:border-white hover:border-2 rounded-lg "
             >
               {index < steps.length - 1 && (
                 <div className="hidden lg:block absolute top-1/2 right-0 w-full h-2 transform translate-x-1/2">
@@ -45,8 +45,8 @@ export default function HowItWorks() {
                 </div>
               )}
               <div className="mb-4">{step.icon}</div>
-              <h3 className="text-xl font-bold text-black mb-2">{step.title}</h3>
-              <p className="text-[#232946]">{step.description}</p>
+              <h3 className="text-xl text-white font-mono mb-2">{step.title}</h3>
+              <p className="text-white font-light">{step.description}</p>
             </div>
           ))}
         </div>

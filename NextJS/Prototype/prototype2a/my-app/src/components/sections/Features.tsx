@@ -23,7 +23,7 @@ export default function Features() {
       description: "Robust API endpoints for custom integration and automation."
     },
     {
-          icon: <MessageSquare className="w-12 h-12 text-[#d34457]" />,
+          icon: <MessageSquare className="w-12 h-12 text-red-600" />,
           title: "Tailored Solutions",
           description: "Leverage AI agents according to your niche that understand your unique challenges or simply request a custom Agent from our developers",
     },
