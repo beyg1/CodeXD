@@ -8,7 +8,7 @@ interface SplineSceneProps {
   className?: string
 }
 
-export default function SplineScene({ scene, className }: SplineSceneProps) {
+export function SplineScene({ scene, className }: SplineSceneProps) {
   return (
     <Suspense 
       fallback={
