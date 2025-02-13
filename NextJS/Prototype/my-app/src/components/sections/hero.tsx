@@ -1,4 +1,6 @@
 import  ButtonPrimary  from "../ui/button-primary";
+import SplineSceneBasic from "../ui/demo";
+
 export default function Hero() {
   return (
     <section className="relative overflow-hidden min-h-screen flex flex-col items-center justify-center px-4 md:items-start md:text-left">
@@ -13,6 +15,7 @@ export default function Hero() {
           See Demo
         </ButtonPrimary>        
       </div>
+      <SplineSceneBasic />
     </section>
   );
 }
