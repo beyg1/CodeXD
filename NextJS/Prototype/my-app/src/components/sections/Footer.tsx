@@ -5,7 +5,7 @@ import ButtonPrimary from "../ui/button-primary"
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden py-16 md:py-24">
-      <div className="container relative mx-auto flex-1 flex flex-col justify-center px-4 mt-16 md:mt-24">
+      <div className="container relative mx-auto flex-1 flex flex-col justify-center px-4 ">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <h3 className="text-lg text-white font-bold">Agentia<span className="text-red-600">World</span></h3>

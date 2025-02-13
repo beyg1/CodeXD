@@ -28,11 +28,11 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <section className="relative overflow-hidden min-h-[600px] lg:min-h-screen flex flex-col">
-      <div className="container relative mx-auto flex-1 flex flex-col justify-center px-4 mt-16 md:mt-24">
+      <div className="container relative mx-auto flex-1 flex flex-col justify-center px-4 ">
         <div className="text-center">
           <h2 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold tracking-tight leading-tight">Perspectives from <span className="text-red-600">Experts</span></h2>
           <p className="mt-8 text-white sm:text-xl md:text-2xl lg:text-3xl font-medium mb-8">
-            See what AI Founders and Market Leaders have to say about Agentia<span className="text-red-600">World</span>.<br/> <span className="mt-4 text-xl text-red-500"> Disclamer - These are real testimonials from Langbase.com a Ai startup found by Ahmed Awais. I believe testimonials like these from Sir Zia&apos;s Students from Prestigious IT background can help the landing page.</span>
+            See what AI Founders and Market Leaders have to say about Agentia<span className="text-red-600">World</span>.
           </p>
         </div>
         <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
