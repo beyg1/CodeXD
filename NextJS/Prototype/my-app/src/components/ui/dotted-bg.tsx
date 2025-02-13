@@ -122,7 +122,7 @@ export default function DottedBackground() {
 
   const darkModeBackgroundStyle = {
     backgroundImage: `radial-gradient(
-      rgba(255, 255, 255, ${0.1 + globalGlowIntensity * 0.2}) 1px,
+      rgba(255, 255, 255, ${0.07 + globalGlowIntensity * 0.2}) 1px,
       transparent 1px
     )`,
     backgroundSize: `${DOT_SPACING}px ${DOT_SPACING}px`,
@@ -131,7 +131,7 @@ export default function DottedBackground() {
   // Updated light mode background style to use white dots instead of black ones
   const lightModeBackgroundStyle = {
     backgroundImage: `radial-gradient(
-      rgba(255, 255, 255, ${0.1 + globalGlowIntensity * 0.2}) 1px,
+      rgba(255, 255, 255, ${0.07 + globalGlowIntensity * 0.2}) 1px,
       transparent 1px
     )`,
     backgroundSize: `${DOT_SPACING}px ${DOT_SPACING}px`,
