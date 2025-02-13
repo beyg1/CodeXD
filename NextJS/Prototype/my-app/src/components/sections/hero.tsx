@@ -15,8 +15,8 @@ export default function Hero() {
           See Demo
         </ButtonPrimary>  
         </div>   
-        <div className="absolute top-44 right-16 w-1/2 h-1/2">  
-        <SplineSceneBasic className="" />              
+        <div className="absolute top-48 right-20 w-1/2 h-1/2">  
+        <SplineSceneBasic  />              
         </div>            
     </section>
   );
