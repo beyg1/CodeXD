@@ -13,9 +13,10 @@ export default function Hero() {
         </h2>        
         <ButtonPrimary className="mt-12" href="https://www.youtube.com/watch?v=9PoGWIK9DmE" target="_blank">
           See Demo
-        </ButtonPrimary>        
+        </ButtonPrimary>  
+        <SplineSceneBasic />      
       </div>
-      <SplineSceneBasic />
+      
     </section>
   );
 }
