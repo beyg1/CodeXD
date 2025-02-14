@@ -1,5 +1,5 @@
 import  ButtonPrimary  from "../ui/button-primary";
-import { SplineSceneBasic } from "../ui/demo";
+
 
 export default function Hero() {
   return (
@@ -15,9 +15,9 @@ export default function Hero() {
           See Demo
         </ButtonPrimary>  
         </div>   
-        <div className="absolute top-48 right-20 w-1/2 h-1/2">  
-        <SplineSceneBasic  />              
-        </div>            
+        {/* <div className="absolute top-48 right-20 w-1/2 h-1/2">  
+            place for an interactive element         
+        </div>             */}
     </section>
   );
 }
