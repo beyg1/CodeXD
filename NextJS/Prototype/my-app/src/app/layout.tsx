@@ -1,8 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import { ThemeProvider } from "@/components/ui/ThemeContext";
 import { metadata } from "./metadata";
 import "./globals.css";
-import DottedBackground from "../components/ui/dotted-bg";
+
 import type React from "react";
 import Script from "next/script";
 
@@ -39,10 +38,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider>
-          <DottedBackground />
           {children}
-        </ThemeProvider>
       </body>
     </html>
   );

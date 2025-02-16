@@ -8,7 +8,7 @@ import Navbar from "@/components/sections/Navbar";
 export default function Home() {
   return (
 <div>
-      <Navbar/>
+      {/* <Navbar/> */}
 <section>
         <Hero/>
       </section>
