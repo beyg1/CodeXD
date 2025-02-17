@@ -3,7 +3,7 @@ import type React from "react"
 import { Button } from "../ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger  } from "@radix-ui/react-dropdown-menu"
 import { Store, ArrowRightToLine, BotMessageSquare, ChevronDown } from "lucide-react"
-import ThemeToggleButton from "../ui/ThemeToggleButton"
+
 
 const CylindricalNavbar: React.FC = () => {
   return (
@@ -46,8 +46,7 @@ const CylindricalNavbar: React.FC = () => {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-        </div>
-        <ThemeToggleButton />
+        </div>        
       </div>
     </nav>
   )
