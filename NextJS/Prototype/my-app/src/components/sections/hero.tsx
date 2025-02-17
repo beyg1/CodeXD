@@ -3,11 +3,9 @@ import DiagonalGridBackground from "../ui/grid-bg";
 
 export default function Hero() {
   return (
-    <>
-      <DiagonalGridBackground />
-      <section className="relative overflow-hidden min-h-screen flex flex-row items-center justify-center px-4 md:items-start md:text-left">
-      
-      <div className="max-w-7xl mx-auto px-4 py-24 sm:py-32 lg:py-40">
+<section className="relative overflow-hidden min-h-screen flex flex-col items-center justify-center md:items-start md:text-left">
+<DiagonalGridBackground />
+<div className="absolute inset-0 flex flex-col items-center justify-center px-4 md:items-start md:text-left">
       
         <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
           Introduce Reasoning & LLMs to your <span className="text-red-600">Automated WorkFlow</span>
@@ -24,6 +22,6 @@ export default function Hero() {
             place for an interactive element         
         </div>             */}
     </section>
-    </>
+   
   );
 }
