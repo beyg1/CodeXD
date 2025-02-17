@@ -129,11 +129,11 @@ export default function DiagonalGridBackground() {
         [2, 0], // Bottom to top left
       ]
 
-      // Calculate actual pixel positions for agents in canvas space
+      // Calculate actual pixel positions for agents in canvas space with rotation compensation
       const agentPositions = agents.map((agent) => {
-        // Center the connection points in the middle of each agent
-        const x = agent.position[0] * gridSize + offset + gridSize / 2
-        const y = agent.position[1] * gridSize + offset + gridSize / 2
+        // Apply rotation transformation to grid coordinates
+        const x = (agent.position[0] * gridSize * Math.cos(Math.PI/4)) + offset
+        const y = (agent.position[1] * gridSize * Math.sin(Math.PI/4)) + offset
         return [x, y]
       })
 
@@ -222,4 +222,3 @@ export default function DiagonalGridBackground() {
     </div>
   )
 }
-
