@@ -1,6 +1,5 @@
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import { Star } from "lucide-react"
-import DiagonalGridBackground from "../ui/grid-bg"
 
 const testimonials = [
   {
@@ -28,8 +27,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="relative overflow-hidden min-h-[600px] lg:min-h-screen flex flex-col">
-      <DiagonalGridBackground />  
+    <section className="relative overflow-hidden min-h-[600px] lg:min-h-screen flex flex-col">      
       <div className="container relative mx-auto flex-1 flex flex-col justify-center px-4 ">
         <div className="text-center">
           <h2 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold tracking-tight leading-tight">Perspectives from <span className="text-red-600">Experts</span></h2>
