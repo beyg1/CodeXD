@@ -1,9 +1,11 @@
 import  ButtonPrimary  from "../ui/button-primary";
-
+import DiagonalGridBackground from "../ui/grid-bg";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden min-h-screen flex flex-row items-center justify-center px-4 md:items-start md:text-left">
+    <>
+      <DiagonalGridBackground />
+      <section className="relative overflow-hidden min-h-screen flex flex-row items-center justify-center px-4 md:items-start md:text-left">
       
       <div className="max-w-7xl mx-auto px-4 py-24 sm:py-32 lg:py-40">
       
@@ -22,5 +24,6 @@ export default function Hero() {
             place for an interactive element         
         </div>             */}
     </section>
+    </>
   );
 }
