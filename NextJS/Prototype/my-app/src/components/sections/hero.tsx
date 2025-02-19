@@ -14,7 +14,7 @@ export default function Hero() {
           </div>
           {/* Text Content */}
           <div className="flex flex-col w-full md:w-1/2 md:absolute md:bottom-0 md:left-0 md:mt-auto md:ml-auto md:mb-auto md:mr-8 order-1 md:order-1">
-            <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight md:pl-8">
+            <h1 className="text-white text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight md:pl-8">
               Introduce Reasoning & LLMs to your <span className="text-red-600">Automated WorkFlow</span>
             </h1>
             <h2 className="mt-8 text-white sm:text-xl md:text-2xl lg:text-3xl font-medium md:pl-8">

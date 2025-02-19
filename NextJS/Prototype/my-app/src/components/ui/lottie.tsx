@@ -5,9 +5,10 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 export default function Lottie() {
   return (
       <DotLottieReact
-        src="Lottie.lottie"
+        src="Main.lottie"
         autoplay
-        loop  
+        loop
+        
       />  
   );
 };
