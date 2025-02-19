@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="relative z-10 flex min-h-screen px-4 py-8">
         <div className="container mx-auto flex flex-col md:flex-row-reverse items-center justify-between gap-8">
           {/* Lottie Animation */}
-          <div className="w-full md:w-1/2 flex justify-center items-center md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/5 md:-translate-y-1/2 order-2 md:order-2">
+          <div className="w-full md:w-1/2 flex justify-center items-center md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/5 md:-translate-y-1/2 ">
             <Lottie />
           </div>
           {/* Text Content */}
