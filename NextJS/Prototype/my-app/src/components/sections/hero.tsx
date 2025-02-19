@@ -1,9 +1,10 @@
 import ButtonPrimary from "../ui/button-primary";
 import AnimatedGridPatternDemo from "../ui/magic-grid";
+import Lottie from "../ui/lottie";
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-screen">
+    <section className="relative w-full min-h-screen bg-neutral-800">
       <AnimatedGridPatternDemo />
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 md:items-start md:text-left">
         <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
@@ -15,6 +16,7 @@ export default function Hero() {
         <ButtonPrimary className="mt-12" href="https://www.youtube.com/watch?v=9PoGWIK9DmE" target="_blank">
           See Demo
         </ButtonPrimary>
+        <Lottie />
       </div>
     </section>
   );

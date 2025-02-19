@@ -3,7 +3,7 @@ import { AnimatedGridPattern } from "../magicui/animated-grid-pattern";
 
 export default function AnimatedGridPatternDemo() {
   return (
-    <div className="relative flex h-[500px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background p-20">
+    <div className="absolute inset-0 w-full h-full overflow-hidden">
       <AnimatedGridPattern
         numSquares={30}
         maxOpacity={0.1}
@@ -11,7 +11,7 @@ export default function AnimatedGridPatternDemo() {
         repeatDelay={1}
         className={cn(
           "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
-          "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
+          "inset-x-0 inset-y-[-30%] h-[150%] skew-y-12",
         )}
       />
     </div>

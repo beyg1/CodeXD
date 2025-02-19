@@ -25,8 +25,8 @@ export interface AnimatedGridPatternProps
 }
 
 export function AnimatedGridPattern({
-  width = 40,
-  height = 40,
+  width = 70,
+  height = 70,
   x = -1,
   y = -1,
   strokeDasharray = 0,
