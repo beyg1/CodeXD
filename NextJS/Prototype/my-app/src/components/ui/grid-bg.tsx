@@ -1,4 +1,4 @@
-"use client"
+"use client" //deprecated
 
 import { useRef, useEffect } from "react"
 
