@@ -1,17 +1,15 @@
 import ButtonPrimary from "../ui/button-primary";
 import AnimatedGridPatternDemo from "../ui/magic-grid";
-import Lottie from "../ui/lottie";
+
 
 export default function Hero() {
   return (
     <section className="relative w-full min-h-screen bg-neutral-800">
       <AnimatedGridPatternDemo />
-      <div className="relative z-10 flex min-h-screen px-4 py-8">
+      
         <div className="container mx-auto ml-auto mr-0 flex flex-col items-center justify-end ">
           {/* Lottie Animation */}
-          {/* <div className="w-full md:w-1/2 flex justify-center items-center md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/5 md:-translate-y-1/2 "> */}
-            <Lottie />
-          {/* </div> */}
+          
           {/* Text Content */}
           <div className="flex flex-col w-full md:w-1/2 md:absolute md:bottom-0 md:left-0 md:mt-auto md:ml-auto md:mb-auto md:mr-8 order-1 md:order-1">
             <h1 className="text-white text-4xl sm:text-5xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight md:pl-8">
@@ -26,7 +24,7 @@ export default function Hero() {
             </ButtonPrimary>
           </div>
         </div>
-      </div>
+     
     </section>
   );
 }
