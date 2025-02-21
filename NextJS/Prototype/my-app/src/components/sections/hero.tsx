@@ -36,7 +36,7 @@ export default function Hero() {
         {/* Right Side Container */}
         <div className="w-full md:w-1/2 min-h-screen md:h-screen flex items-center justify-center">
           <div className="w-full h-full flex items-center justify-center">
-            <AnimatedBeamDemo />
+            <AnimatedBeamDemo/>
           </div>
         </div>
       </div>
