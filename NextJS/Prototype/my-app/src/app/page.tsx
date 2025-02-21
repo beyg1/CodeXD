@@ -12,7 +12,7 @@ export default function Home() {
 <section>
         <Hero/>
       </section>
-<section>
+{/* <section>
         <Features/>
       </section>
 <section>
@@ -23,7 +23,7 @@ export default function Home() {
       </section>
 <section>
         <Footer/>
-      </section>
+      </section> */}
     </div>
   );
 }

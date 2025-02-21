@@ -7,11 +7,10 @@ export default function Hero() {
     <section className="relative w-full min-h-screen bg-neutral-800">
       <AnimatedGridPatternDemo />
       
-        <div className="container mx-auto ml-auto mr-0 flex flex-col items-center justify-end ">
-          {/* Lottie Animation */}
+       
           
           {/* Text Content */}
-          <div className="flex flex-col w-full md:w-1/2 md:absolute md:bottom-0 md:left-0 md:mt-auto md:ml-auto md:mb-auto md:mr-8 order-1 md:order-1">
+          <div className="flex bg-black flex-col w-full md:w-1/2 md:absolute md:bottom-0 md:left-0 md:mt-auto md:ml-auto md:mb-auto md:mr-8 order-1 md:order-1">
             <h1 className="text-white text-4xl sm:text-5xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight md:pl-8">
             AI Agents – Discover, Buy & 
             <span className="text-red-600"> Build the Future.</span>
@@ -23,7 +22,7 @@ export default function Hero() {
               See Demo
             </ButtonPrimary>
           </div>
-        </div>
+        
      
     </section>
   );
