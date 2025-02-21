@@ -53,7 +53,7 @@ export default function AnimatedBeamDemo() {
             <Icons.notion />
           </Circle>
           <Circle ref={div4Ref} className="size-16">
-            <Icons.openai />
+            <Icons.agent />
           </Circle>
           <Circle ref={div6Ref}>
             <Icons.zapier />
@@ -135,7 +135,7 @@ const Icons = {
       />
     </svg>
   ),
-  openai: () => (
+  agent: () => (
     <img src="/bot.svg" alt="OpenAI" width="100" height="100" />
   ),
   googleDrive: () => (
