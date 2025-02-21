@@ -13,7 +13,7 @@ export default function Hero() {
           <div className="flex-1" />
           
           {/* Text Content Container - Bottom Left */}
-          <div className="flex flex-col bg-black">
+          <div className="flex flex-col">
             <h1 className="text-white text-4xl sm:text-5xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight md:pl-8">
               AI Agents - Discover, Deploy &
               <span className="text-red-600"> Build the Future.</span>
