@@ -20,6 +20,16 @@ const requestSessionNotifications = () => {
   Notification.requestPermission().catch(() => undefined)
 }
 
+const registerBudgetNotificationWorker = async () => {
+  if (!('serviceWorker' in navigator)) return undefined
+
+  try {
+    return await navigator.serviceWorker.register('/budget-notifications-sw.js')
+  } catch {
+    return undefined
+  }
+}
+
 const playBudgetChime = () => {
   const AudioContextClass =
     window.AudioContext ||
@@ -47,20 +57,41 @@ const playBudgetChime = () => {
   window.setTimeout(() => void audioContext.close(), 1300)
 }
 
+const showBudgetNotification = async (activity: Activity, title: string, body: string) => {
+  if (!('Notification' in window) || Notification.permission !== 'granted') return
+
+  const notificationOptions = {
+    body,
+    tag: `better-track-budget-${activity.id}`,
+    silent: true,
+    data: {
+      url: window.location.origin,
+    },
+  }
+
+  const registration = await registerBudgetNotificationWorker()
+
+  if (registration?.showNotification) {
+    await registration.showNotification(title, notificationOptions)
+    return
+  }
+
+  const notification = new Notification(title, notificationOptions)
+  notification.onclick = (event) => {
+    event.preventDefault()
+    notification.close()
+    window.focus()
+    window.location.assign(window.location.origin)
+  }
+}
+
 const announceBudgetExceeded = (activity: Activity) => {
   const title = `${activity.name} budget exceeded`
   const body = `${activity.name} has passed its ${activity.goalMinutes}-minute budget.`
 
   toast.warn(body)
   playBudgetChime()
-
-  if ('Notification' in window && Notification.permission === 'granted') {
-    new Notification(title, {
-      body,
-      tag: `better-track-budget-${activity.id}`,
-      silent: true,
-    })
-  }
+  void showBudgetNotification(activity, title, body)
 }
 
 export function useActivityTimer(initialActivities: Activity[]) {
@@ -92,6 +123,7 @@ export function useActivityTimer(initialActivities: Activity[]) {
   useEffect(() => {
     if (!isHydrated) return
     requestSessionNotifications()
+    void registerBudgetNotificationWorker()
   }, [isHydrated])
 
   useEffect(() => {
@@ -173,7 +205,7 @@ export function useActivityTimer(initialActivities: Activity[]) {
       time: 0,
       isRunning: false,
       color,
-      alertEnabled: false,
+      alertEnabled: true,
       alertTime: 30 * 60,
       goalMinutes: 30,
       kind: 'leisure',

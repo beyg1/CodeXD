@@ -3,18 +3,18 @@ export const categoryColors: { [key: string]: string } = {
   "Learning": "bg-[#8EBFCC]",
   "Working": "bg-[#79B28F]",
   "Social Media": "bg-[#D9BE72]",
-  "New Activity Rose": "bg-[#C993A5]",
-  "New Activity Teal": "bg-[#72B7AE]",
-  "New Activity Lavender": "bg-[#A8A0D6]",
-  "New Activity Coral": "bg-[#D99A7A]",
+  "New Activity Plum": "bg-[#9B6BB3]",
+  "New Activity Coral": "bg-[#D97862]",
+  "New Activity Indigo": "bg-[#6F7DD7]",
+  "New Activity Terracotta": "bg-[#B86F52]",
   "default": "bg-[#A9B8D6]"
 }
 
 export const newActivityColors = [
-  categoryColors["New Activity Rose"],
-  categoryColors["New Activity Teal"],
-  categoryColors["New Activity Lavender"],
+  categoryColors["New Activity Plum"],
   categoryColors["New Activity Coral"],
+  categoryColors["New Activity Indigo"],
+  categoryColors["New Activity Terracotta"],
 ]
 
 export const defaultActivities = [

@@ -61,41 +61,41 @@ const activitySkins: Record<string, {
 }
 
 const activityColorSkins: typeof activitySkins = {
-  "bg-[#C993A5]": {
-    card: "border-[#DDB5C4] bg-[#FFF0F5] hover:border-[#C993A5] hover:bg-[#FCE5EF]",
-    activeCard: "border-[#B8788D] bg-[#FBE8F0] shadow-[0_18px_48px_rgba(175,100,126,0.18)]",
-    rail: "bg-[#B8788D]",
-    play: "border-[#D9AAB9] bg-[#F0C8D5] text-[#542A39] hover:border-[#B8788D] hover:bg-[#E8B5C7]",
-    progressTrack: "bg-[#F0CEDA]",
-    kindIntentional: "bg-[#F2D9E2] text-[#704157] hover:bg-[#EBC6D3]",
-    kindOpen: "bg-[#F8DFD4] text-[#744431] hover:bg-[#EEC7B8]",
+  "bg-[#9B6BB3]": {
+    card: "border-[#C9ADD8] bg-[#F8F0FC] hover:border-[#9B6BB3] hover:bg-[#F0E3F8]",
+    activeCard: "border-[#8A58A3] bg-[#F2E4FA] shadow-[0_18px_48px_rgba(126,80,153,0.18)]",
+    rail: "bg-[#7E5099]",
+    play: "border-[#B995CC] bg-[#E3C7EF] text-[#3E2052] hover:border-[#8A58A3] hover:bg-[#D6B0E7]",
+    progressTrack: "bg-[#E4CFEE]",
+    kindIntentional: "bg-[#E8D9F0] text-[#59346F] hover:bg-[#DDC5EA]",
+    kindOpen: "bg-[#F4DFC9] text-[#72472B] hover:bg-[#EBC9A9]",
   },
-  "bg-[#72B7AE]": {
-    card: "border-[#A7D7D1] bg-[#EAF9F7] hover:border-[#72B7AE] hover:bg-[#DDF4F1]",
-    activeCard: "border-[#58A69B] bg-[#DFF5F2] shadow-[0_18px_48px_rgba(74,149,140,0.18)]",
-    rail: "bg-[#42998F]",
-    play: "border-[#91CBC4] bg-[#BFE6E1] text-[#173F3B] hover:border-[#58A69B] hover:bg-[#A9DBD5]",
-    progressTrack: "bg-[#C9E8E4]",
-    kindIntentional: "bg-[#D8F1EE] text-[#276B65] hover:bg-[#C3E8E3]",
-    kindOpen: "bg-[#E7EDC8] text-[#637135] hover:bg-[#DCE5B1]",
+  "bg-[#D97862]": {
+    card: "border-[#ECB2A4] bg-[#FFF0EB] hover:border-[#D97862] hover:bg-[#FFE4DC]",
+    activeCard: "border-[#C96249] bg-[#FFE7DF] shadow-[0_18px_48px_rgba(191,88,62,0.18)]",
+    rail: "bg-[#C1533C]",
+    play: "border-[#E69E8D] bg-[#F2C2B6] text-[#55271D] hover:border-[#C96249] hover:bg-[#ECA996]",
+    progressTrack: "bg-[#F1CBC2]",
+    kindIntentional: "bg-[#E7EBD2] text-[#566A38] hover:bg-[#DCE5BC]",
+    kindOpen: "bg-[#F7D7CD] text-[#75402F] hover:bg-[#EFC1B2]",
   },
-  "bg-[#A8A0D6]": {
-    card: "border-[#C8C2EA] bg-[#F3F1FF] hover:border-[#A8A0D6] hover:bg-[#ECE8FF]",
-    activeCard: "border-[#8D83C8] bg-[#ECE9FF] shadow-[0_18px_48px_rgba(117,105,182,0.18)]",
-    rail: "bg-[#7D72BF]",
-    play: "border-[#BBB4E4] bg-[#DAD5F4] text-[#312A61] hover:border-[#8D83C8] hover:bg-[#CAC3EE]",
-    progressTrack: "bg-[#DDD8F1]",
-    kindIntentional: "bg-[#E4E0FA] text-[#4C4381] hover:bg-[#D6D0F3]",
-    kindOpen: "bg-[#F0E2C7] text-[#725B2E] hover:bg-[#E6D2AB]",
+  "bg-[#6F7DD7]": {
+    card: "border-[#B6BFF0] bg-[#F0F2FF] hover:border-[#6F7DD7] hover:bg-[#E7EAFF]",
+    activeCard: "border-[#5B67C4] bg-[#E9ECFF] shadow-[0_18px_48px_rgba(83,95,181,0.18)]",
+    rail: "bg-[#5260BD]",
+    play: "border-[#A3ACE8] bg-[#CBD2F8] text-[#222A63] hover:border-[#5B67C4] hover:bg-[#B9C2F3]",
+    progressTrack: "bg-[#D4DAF6]",
+    kindIntentional: "bg-[#DDE2FA] text-[#384184] hover:bg-[#CDD4F5]",
+    kindOpen: "bg-[#F1E4C8] text-[#705830] hover:bg-[#E7D4AB]",
   },
-  "bg-[#D99A7A]": {
-    card: "border-[#ECC0AA] bg-[#FFF2EB] hover:border-[#D99A7A] hover:bg-[#FFE8DD]",
-    activeCard: "border-[#C87F5D] bg-[#FFE9DF] shadow-[0_18px_48px_rgba(190,105,70,0.18)]",
-    rail: "bg-[#BE6B49]",
-    play: "border-[#E4AF95] bg-[#F2CBB9] text-[#542D1F] hover:border-[#C87F5D] hover:bg-[#EBB89F]",
-    progressTrack: "bg-[#F2D3C4]",
-    kindIntentional: "bg-[#E4ECD4] text-[#526D39] hover:bg-[#D8E5BF]",
-    kindOpen: "bg-[#F7DDCF] text-[#75432F] hover:bg-[#EFC8B8]",
+  "bg-[#B86F52]": {
+    card: "border-[#DDB49F] bg-[#FFF1E8] hover:border-[#B86F52] hover:bg-[#FFE6D8]",
+    activeCard: "border-[#A95D41] bg-[#FFE8DC] shadow-[0_18px_48px_rgba(159,85,58,0.18)]",
+    rail: "bg-[#9E553A]",
+    play: "border-[#D4A188] bg-[#EBC5B2] text-[#4D2A1B] hover:border-[#A95D41] hover:bg-[#E0AE95]",
+    progressTrack: "bg-[#EBCDBC]",
+    kindIntentional: "bg-[#E0E9D3] text-[#526C3A] hover:bg-[#D4E0C0]",
+    kindOpen: "bg-[#F0D4C4] text-[#70402B] hover:bg-[#E4BBA5]",
   },
 }
 
