@@ -8,6 +8,10 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      sans: ['var(--font-geist-sans)'],
+      mono: ['var(--font-geist-mono)'],
+    },
   	extend: {
   		colors: {
   			background: 'hsl(var(--background))',
@@ -55,7 +59,27 @@ const config: Config = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+      keyframes: {
+        budgetGlow: {
+          '0%, 100%': {
+            boxShadow: '0 18px 48px rgba(180, 139, 31, 0.12)',
+            transform: 'translateY(0)',
+          },
+          '50%': {
+            boxShadow: '0 22px 60px rgba(180, 139, 31, 0.28)',
+            transform: 'translateY(-2px)',
+          },
+        },
+        budgetPulse: {
+          '0%, 100%': { opacity: '0.72', transform: 'scaleX(1)' },
+          '50%': { opacity: '1', transform: 'scaleX(1.015)' },
+        },
+      },
+      animation: {
+        'budget-glow': 'budgetGlow 2.2s ease-in-out infinite',
+        'budget-pulse': 'budgetPulse 1.4s ease-in-out infinite',
+      },
   	}
   },
   plugins: [require("tailwindcss-animate")],

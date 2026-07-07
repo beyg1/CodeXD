@@ -7,4 +7,6 @@ export interface Activity {
   alertEnabled: boolean
   alertTime: number
   lastUpdate: number
+  goalMinutes: number
+  kind: 'intentional' | 'leisure'
 }
