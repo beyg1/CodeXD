@@ -94,8 +94,16 @@ const announceBudgetExceeded = (activity: Activity) => {
   void showBudgetNotification(activity, title, body)
 }
 
+const createFreshActivities = (activities: Activity[]) =>
+  activities.map(activity => ({
+    ...activity,
+    time: 0,
+    isRunning: false,
+    lastUpdate: 0,
+  }))
+
 export function useActivityTimer(initialActivities: Activity[]) {
-  const [activities, setActivities] = useState<Activity[]>(initialActivities)
+  const [activities, setActivities] = useState<Activity[]>(() => createFreshActivities(initialActivities))
   const [isHydrated, setIsHydrated] = useState(false)
 
   useEffect(() => {
@@ -184,6 +192,13 @@ export function useActivityTimer(initialActivities: Activity[]) {
     setActivities(prevActivities => prevActivities.filter(activity => activity.id !== id))
   }
 
+  const resetTracking = () => {
+    setActivities(createFreshActivities(initialActivities))
+    window.localStorage.removeItem('better-track.activities')
+    window.localStorage.setItem('better-track.date', getTodayKey())
+    toast.success('Tracking session reset.')
+  }
+
   const renameActivity = (id: number, newName: string) => {
     setActivities(prevActivities =>
       prevActivities.map(activity =>
@@ -242,6 +257,7 @@ export function useActivityTimer(initialActivities: Activity[]) {
     toggleTimer,
     resetTimer,
     deleteActivity,
+    resetTracking,
     renameActivity,
     addNewActivity,
     toggleAlert,

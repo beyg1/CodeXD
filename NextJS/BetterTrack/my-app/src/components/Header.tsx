@@ -1,10 +1,11 @@
-import { CircleDot } from 'lucide-react'
+import { CircleDot, RotateCcw } from 'lucide-react'
 
 interface HeaderProps {
   totalTime: string
+  onResetTracking: () => void
 }
 
-export function Header({ totalTime }: HeaderProps) {
+export function Header({ totalTime, onResetTracking }: HeaderProps) {
   const today = new Intl.DateTimeFormat('en', {
     weekday: 'long',
     month: 'long',
@@ -23,7 +24,15 @@ export function Header({ totalTime }: HeaderProps) {
         </div>
       </div>
 
-      <div className="flex items-end justify-between gap-8 sm:justify-end">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-end sm:gap-8">
+        <button
+          type="button"
+          onClick={onResetTracking}
+          className="inline-flex h-10 items-center justify-center gap-2 rounded-xl border border-[#D2B69A] bg-[#FFF4E8] px-3 text-xs font-semibold text-[#74452B] shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] transition hover:border-[#B9825F] hover:bg-[#FFE8D8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A66544] focus-visible:ring-offset-2 active:scale-[0.98]"
+        >
+          <RotateCcw className="size-3.5" aria-hidden="true" />
+          Reset Tracking
+        </button>
         <div className="text-left sm:text-right">
           <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#66806F]">Today</p>
           <p className="mt-1 text-sm font-medium text-[#2F4438]">{today}</p>

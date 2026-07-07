@@ -39,6 +39,7 @@ export default function TimeTracker() {
     toggleTimer,
     resetTimer,
     deleteActivity,
+    resetTracking,
     renameActivity,
     addNewActivity,
     toggleAlert,
@@ -53,6 +54,14 @@ export default function TimeTracker() {
     setIntention(pickSessionItem('better-track.session-intention', intentionQuotes))
     setUsefulRule(pickSessionItem('better-track.session-rule', usefulRules))
   }, [])
+
+  const handleResetTracking = () => {
+    resetTracking()
+    window.sessionStorage.removeItem('better-track.session-intention')
+    window.sessionStorage.removeItem('better-track.session-rule')
+    setIntention(pickSessionItem('better-track.session-intention', intentionQuotes))
+    setUsefulRule(pickSessionItem('better-track.session-rule', usefulRules))
+  }
 
   const metrics = useMemo(() => {
     const total = activities.reduce((sum, activity) => sum + activity.time, 0)
@@ -94,7 +103,7 @@ export default function TimeTracker() {
       </a>
 
       <div className="mx-auto max-w-[90rem] px-4 py-5 sm:px-7 lg:px-10 lg:py-7">
-        <Header totalTime={formatTime(metrics.total)} />
+        <Header totalTime={formatTime(metrics.total)} onResetTracking={handleResetTracking} />
 
         <main id="main-content" className="grid gap-7 pt-7 lg:grid-cols-[minmax(0,1fr)_22rem] xl:gap-10">
           <section aria-labelledby="day-heading" className="min-w-0">
